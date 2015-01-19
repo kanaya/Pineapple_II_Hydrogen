@@ -126,11 +126,11 @@
 <board>
 <plain>
 <wire x1="0" y1="0" x2="72.06" y2="0" width="0" layer="20"/>
-<wire x1="72.06" y1="0" x2="72.06" y2="72.38" width="0" layer="20"/>
-<wire x1="72.06" y1="72.38" x2="0" y2="72.38" width="0" layer="20"/>
-<wire x1="0" y1="72.38" x2="0" y2="0" width="0" layer="20"/>
-<dimension x1="0" y1="0" x2="0" y2="72.39" x3="-7.62" y3="36.195" textsize="1.778" layer="20"/>
-<dimension x1="0" y1="0" x2="72.39" y2="0" x3="36.195" y3="-2.54" textsize="1.778" layer="20"/>
+<wire x1="72.06" y1="0" x2="72" y2="72" width="0" layer="20"/>
+<wire x1="72" y1="72" x2="0" y2="72" width="0" layer="20"/>
+<wire x1="0" y1="72" x2="0" y2="0" width="0" layer="20"/>
+<dimension x1="0" y1="0" x2="0" y2="72" x3="-5.08" y3="36" textsize="1.778" layer="20"/>
+<dimension x1="0" y1="0" x2="72.06" y2="0" x3="36.03" y3="-2.54" textsize="1.778" layer="20"/>
 </plain>
 <libraries>
 <library name="con-ml">
