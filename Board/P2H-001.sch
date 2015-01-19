@@ -8466,7 +8466,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY28" library="supply2" deviceset="VCC" device=""/>
 <part name="SUPPLY30" library="supply2" deviceset="VCC" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
-<part name="JP2" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="VDD1" library="supply1" deviceset="VDD" device=""/>
 <part name="R1" library="resistor" deviceset="R-US_" device="0204/5" value="220"/>
 <part name="SUPPLY14" library="supply2" deviceset="VCC" device=""/>
@@ -8540,7 +8539,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY28" gate="G$1" x="276.86" y="-53.34"/>
 <instance part="SUPPLY30" gate="G$1" x="284.48" y="-53.34"/>
 <instance part="JP1" gate="G$1" x="53.34" y="-25.4"/>
-<instance part="JP2" gate="G$1" x="53.34" y="-55.88"/>
 <instance part="VDD1" gate="G$1" x="68.58" y="22.86"/>
 <instance part="R1" gate="G$1" x="60.96" y="12.7"/>
 <instance part="SUPPLY14" gate="G$1" x="170.18" y="60.96"/>
@@ -8863,12 +8861,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="86.36" y="-76.2" size="1.778" layer="95"/>
 <pinref part="IC1" gate="A" pin="1A"/>
 <wire x1="78.74" y1="-48.26" x2="86.36" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="-48.26" x2="86.36" y2="-60.96" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="G$1" pin="2"/>
-<wire x1="86.36" y1="-60.96" x2="86.36" y2="-76.2" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-55.88" x2="50.8" y2="-60.96" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="-60.96" x2="86.36" y2="-60.96" width="0.1524" layer="91"/>
-<junction x="86.36" y="-60.96"/>
+<wire x1="86.36" y1="-48.26" x2="86.36" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RX-" class="0">
@@ -9157,12 +9150,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$1" class="0">
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
-<pinref part="JP2" gate="G$1" pin="1"/>
 <wire x1="50.8" y1="-25.4" x2="50.8" y2="-48.26" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="A" pin="1Y"/>
-<wire x1="50.8" y1="-48.26" x2="50.8" y2="-53.34" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="-48.26" x2="50.8" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="50.8" y="-48.26"/>
 </segment>
 </net>
 <net name="LED1G" class="0">
