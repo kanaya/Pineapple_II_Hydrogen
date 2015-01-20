@@ -131,6 +131,12 @@
 <wire x1="0" y1="72" x2="0" y2="0" width="0" layer="20"/>
 <dimension x1="0" y1="0" x2="72" y2="0" x3="36" y3="-3" textsize="1.778" layer="20" visible="yes"/>
 <dimension x1="0" y1="0" x2="0" y2="72" x3="-5" y3="36" textsize="1.778" layer="20" visible="yes"/>
+<hole x="3" y="3" drill="3.2"/>
+<hole x="69" y="3" drill="3.2"/>
+<hole x="3" y="69" drill="3.2"/>
+<hole x="69" y="69" drill="3.2"/>
+<hole x="66" y="66" drill="1.2"/>
+<text x="54" y="1" size="1.27" layer="104">PINEAPPLE.CC</text>
 </plain>
 <libraries>
 <library name="con-ml">
