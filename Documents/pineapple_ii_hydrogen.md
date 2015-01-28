@@ -1,18 +1,20 @@
-# Pineapple II Hydrogen/0.2.0
+# Pineapple II Hydrogen/0.2.0 Tech Doc
 
-## Panel
+## Exterior
+
+### Panel
 
 | SW/LED | Function |
 | - | - |
 | Reset SW | Reset |
 | Min SW | Min-set |
 | Max SW | Max-set |
-| Main LED | Power Indicator |
-| LED 1 | Min-value is set |
-| LED 2 | TX signal |
-| LED 3 | Max-value is set |
+| Main LED | Power Indicator, Note 1 is received |
+| LED 1 | Min-value is set (Blue), Note 2 is received (Green) |
+| LED 2 | TX signal (White), Note 3 is received (Green) |
+| LED 3 | Max-value is set (Yellow), Note 4 is received (Green) |
 
-## External Ports
+### External Ports
 
 | Port | Pin | Signal |
 | - | - | - |
@@ -39,13 +41,15 @@
 | | G5 | Sensor 2 |
 | | G6 | Sensor 3 |
 | | G7 | Sensor 4 |
-| | G8 | Sensor 5 |
-| | G9 | Sensor 6 |
+| | G8 | Reserved (Sensor 5 or I2C) |
+| | G9 | Reserved (Sensor 6 or I2C) |
 | | G10 | Light 1 |
 | | G11 | Light 2 |
 | | G12 | Light 3 |
 
-## Internal Ports
+## What's inside
+
+### Internal Ports
 
 | Port | Pin | Signal | Connection |
 | - | - |
@@ -108,7 +112,7 @@
 | | D9 | +7-12V | |
 | | D10 | GND | |
 
-## Pin Assignment
+### Arduino Pin Assignment
 
 | Arduino Pro Mini | Signal |
 | - | - |
@@ -139,7 +143,43 @@
 | Arduino-A6 | VR |
 | Arduino-A7 | mdetect |
 
+### Parts
 
+* Logic board
+* Arduino Pro Mini 5V
+* 74LS07
+* 74LS157
+* LTC1485 x2
+* TLC5940
+* TLP552 or TLP2962
+* 1S1588
+* C 0.1u
+* C 0.01u x6
+* R 120 x2
+* R 220 x3
+* R 4.7k
+* Con PH 8p side
+* Con PH 16p side
+* Con Harting 10p
+* Con Harting 26p side
+* SW NKK G-13AP
+* Pinheader 2p x2
+* Pinheader 6p x1
+* Pinheader 12p x2
+* Case Takachi MX-2-13
+* SW/LED NKK
+* SW 
+* VR B 10k
+* Grip
+* LED Kathode-common full-color x3
+* Small board
+* Con HR10A
+* Con HR10A
+* Con stereo mini pin jack w/ switch x2
+* Con DC jack
+* Con Harting 26p plug
+* Con PH 8p plug
+* Con PH 16p plug
 
 
 
