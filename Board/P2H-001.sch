@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -8379,6 +8379,8 @@ Source:
 <sheets>
 <sheet>
 <plain>
+<text x="276.86" y="-71.12" size="1.778" layer="91">Pineapple II Hydrogen 0.1.1
+Copyright 2015 by Pineapple.cc</text>
 </plain>
 <instances>
 <instance part="SUPPLY1" gate="GND" x="12.7" y="-22.86"/>
@@ -9363,4 +9365,10 @@ Source:
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
