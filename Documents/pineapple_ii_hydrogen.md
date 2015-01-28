@@ -1,4 +1,4 @@
-# Pineapple II Hydrogen/1.0.0
+# Pineapple II Hydrogen/0.2.0
 
 ## Panel
 
@@ -76,7 +76,7 @@
 | | B3 | +7-12V | Arduino Power |
 | | B4 | Arduino-D6 | TLC5940-Mode, D8 |
 | | B5 | Arduino-D8 | Xbar |
-| | B6 | Arduino-D9 | gdetect/G3 |
+| | B6 | Arduino-D9 | G3 (gdetect) |
 | | B7 | Arduino-A0 | G4 |
 | | B8 | Arduino-A1 | G5 |
 | | B9 | Arduino-A2 | G6 |
@@ -86,7 +86,7 @@
 | | B13 | TLC5940-OUT0 | L1, G10 |
 | | B14 | TLC5940-OUT1 | L2, G11 |
 | | B15 | TLC5940-OUT2 | L3, G12 |
-| | B16 | Arduino-D10 | xdetect/X1 |
+| | B16 | Arduino-D10 | X1 (xdetect) |
 | | B17 | RX+ | X3 |
 | | B18 | RX- | X4 |
 | | B19 | TX+ | X5 |
@@ -99,13 +99,47 @@
 | | B26 | RX-OK-K | m1 (MIDI IN KATHODE) |
 | **Drive Port** | D1 | +5V | |
 | | D2 | GND | |
-| | D3 | TLC5940-SOUT | Serial Out |
-| | D4 | Arduino-D13/TLC5940-SCLCK | Serial Clock |
-| | D5 | Arduino-D4/TLC5940-BLANK | |
-| | D6 | Arduino-D7/TLC5940-XLAT | |
-| | D7 | Arduino-D5/TLC5940-GSCLCK | Clock |
-| | D8 | Arduino-D6/TLC5940-MODE | |
+| | D3 | TLC5940-SOUT | Ext TLC5940-SIN|
+| | D4 | Arduino-D13/TLC5940-SCLCK | Ext TLC5940-SCLCK |
+| | D5 | Arduino-D4/TLC5940-BLANK | Ext TLC5940-BLANK |
+| | D6 | Arduino-D7/TLC5940-XLAT | Ext TLC5940-XLAT|
+| | D7 | Arduino-D5/TLC5940-GSCLCK | Ext TLC5940-GSCLCK|
+| | D8 | Arduino-D6/TLC5940-MODE | Ext TLC5940-MODE, B4 |
 | | D9 | +7-12V | |
 | | D10 | GND | |
+
+## Pin Assignment
+
+| Arduino Pro Mini | Signal |
+| - | - |
+| Arduino-Vin | +7-12V |
+| Arduino-GND | GND |
+| Arduino-5V | +5V Regurated Power |
+| Arduino-RST | RST |
+| Arduino-D0 | RX |
+| Arduino-D1 | TX |
+| Arduino-D2 | Min SW |
+| Arduino-D3 | Max SW |
+| Arduino-D4 | TLC5940-BLANK |
+| Arduino-D5 | TLC5940-GSCLCK |
+| Arduino-D6 | TLC5940-MODE |
+| Arduino-D7 | TLC5940-XLAT |
+| Arduino-D8 | Xbar |
+| Arduino-D9 | gdetect |
+| Arduino-D10 | xdetect |
+| Arduino-D11 | TLC5940-SIN |
+| Arduino-D12 | |
+| Arduino-D13 | TLC5940-SCLCK |
+| Arduino-A0 | Sensor 1 |
+| Arduino-A1 | Sensor 2 |
+| Arduino-A2 | Sensor 3 |
+| Arduino-A3 | Sensor 4 |
+| Arduino-A4 | Sensor 5 |
+| Arduino-A5 | Sensor 6 |
+| Arduino-A6 | VR |
+| Arduino-A7 | mdetect |
+
+
+
 
 

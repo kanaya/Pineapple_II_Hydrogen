@@ -8363,6 +8363,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U1" library="SparkFun-Boards" deviceset="ARDUINO_PRO_MINI" device=""/>
 <part name="VDD5" library="supply1" deviceset="VDD" device=""/>
 <part name="SV2" library="con-ml" deviceset="ML10" device=""/>
+<part name="JP2" library="pinhead" deviceset="PINHD-1X2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8421,7 +8422,7 @@ Copyright 2015 by Pineapple.cc</text>
 <instance part="SUPPLY25" gate="G$1" x="228.6" y="-50.8"/>
 <instance part="SUPPLY29" gate="G$1" x="236.22" y="-50.8"/>
 <instance part="SUPPLY32" gate="G$1" x="243.84" y="-50.8"/>
-<instance part="JP1" gate="G$1" x="33.02" y="-38.1"/>
+<instance part="JP1" gate="G$1" x="40.64" y="-12.7"/>
 <instance part="SUPPLY15" gate="G$1" x="167.64" y="127"/>
 <instance part="SUPPLY13" gate="GND" x="147.32" y="-22.86"/>
 <instance part="SV1" gate="1" x="157.48" y="40.64"/>
@@ -8440,6 +8441,7 @@ Copyright 2015 by Pineapple.cc</text>
 <instance part="U1" gate="G$1" x="96.52" y="30.48"/>
 <instance part="VDD5" gate="G$1" x="281.94" y="33.02"/>
 <instance part="SV2" gate="G$1" x="269.24" y="15.24"/>
+<instance part="JP2" gate="G$1" x="88.9" y="-30.48"/>
 </instances>
 <busses>
 </busses>
@@ -8751,7 +8753,12 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="OK1" gate="A" pin="VO"/>
 <label x="116.84" y="-60.96" size="1.778" layer="95"/>
 <pinref part="IC3" gate="A" pin="1A"/>
-<wire x1="58.42" y1="-60.96" x2="152.4" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="-60.96" x2="78.74" y2="-60.96" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="-60.96" x2="152.4" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-30.48" x2="78.74" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-30.48" x2="78.74" y2="-60.96" width="0.1524" layer="91"/>
+<junction x="78.74" y="-60.96"/>
 </segment>
 </net>
 <net name="RX-" class="0">
@@ -8999,11 +9006,12 @@ Copyright 2015 by Pineapple.cc</text>
 </net>
 <net name="RX" class="0">
 <segment>
-<pinref part="JP1" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="-35.56" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
 <label x="76.2" y="43.18" size="1.778" layer="95"/>
 <pinref part="U1" gate="G$1" pin="RXI"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="30.48" y1="43.18" x2="30.48" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="-10.16" x2="38.1" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="HSRX" class="0">
@@ -9034,9 +9042,14 @@ Copyright 2015 by Pineapple.cc</text>
 <net name="N$1" class="0">
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
-<wire x1="30.48" y1="-38.1" x2="30.48" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="-12.7" x2="30.48" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="-12.7" x2="30.48" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="A" pin="1Y"/>
+<wire x1="30.48" y1="-27.94" x2="30.48" y2="-60.96" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="-60.96" x2="30.48" y2="-60.96" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="86.36" y1="-27.94" x2="30.48" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="30.48" y="-27.94"/>
 </segment>
 </net>
 <net name="LED2G" class="0">
