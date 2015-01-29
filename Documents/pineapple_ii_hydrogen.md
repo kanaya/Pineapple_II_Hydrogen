@@ -160,23 +160,24 @@
 * R 4.7k
 * Con PH 8p side
 * Con PH 16p side
-* Con Harting 10p
+* Con Harting 10p or Pinheader 2x5p
 * Con Harting 26p side
 * SW NKK G-13AP
-* Pinheader 2p x2
-* Pinheader 6p x1
-* Pinheader 12p x2
-* Case Takachi MX-2-13
-* SW/LED NKK
-* SW 
-* VR B 10k
-* Grip
-* LED Kathode-common full-color x3
+* Pinheader 1x2p x2
+* Pinheader 1x6p x1
+* Pinheader 1x12p x2
+* Case Takachi MX2-8-13
+* SW/LED NKK HB-15CKS2-4MBMS
+* SW Nidech Copal-8A
+* VR B 10k Supertech VR
+* Knob
+* LED Kathode-common full-color OSTA5131A x3
 * Small board
-* Con HR10A
-* Con HR10A
-* Con stereo mini pin jack w/ switch x2
-* Con DC jack
+* Con HR10A-7R-6P
+* Con HR10A-10R-12S
+* Con stereo mini pin jack EST MJ-074N
+* Con stereo mini pin jack w/ switch EST MJ-352W-C
+* Con DC jack EST MJ-17
 * Con Harting 26p plug
 * Con PH 8p plug
 * Con PH 16p plug
