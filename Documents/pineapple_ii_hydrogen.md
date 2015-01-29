@@ -158,6 +158,7 @@
 * R 120 x2
 * R 220 x3
 * R 4.7k
+* R 22k
 * Con PH 8p side
 * Con PH 16p side
 * Con Harting 10p or Pinheader 2x5p
@@ -181,6 +182,9 @@
 * Con Harting 26p plug
 * Con PH 8p plug
 * Con PH 16p plug
+* Flat cable
+* PH harnes 8p
+* PH harnes 16p
 
 
 
