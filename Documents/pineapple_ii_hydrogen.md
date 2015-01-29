@@ -20,13 +20,13 @@
 | - | - | - |
 | **Power** | P1 | Vin (+7-12V) |
 | | P2 | GND |
-| **MIDI OUT** | M0 (SW) | mdetect |
-| | M1 | MIDI OUT SINK (DIN #5)|
+| **MIDI OUT** | M1 | MIDI OUT SINK (DIN #5)|
 | | M2 | MIDI OUT SOURCE (DIN #4) |
+| | M2SW | mdetect |
 | | M3 | GND (DIN #2)|
 | **MIDI IN** | m1 | MIDI IN KATHODE (DIN #5) |
-| | m2 | MIDI IN ANODE (DIN #4), MIDI Monitor (mmonitor) |
-| | m3 | NC |
+| | m2 | MIDI IN ANODE (DIN #4), vdetect |
+| | m3 | GND |
 | **XMIDI** | X1 | Vin |
 | | X2 | GND |
 | | X3 | RX+ |
@@ -36,10 +36,10 @@
 | **GeekPort II** | G1 | Vcc (+5V) |
 | | G2 | GND |
 | | G3 | gdetect |
-| | G4 | Sensor 1 |
-| | G5 | Sensor 2 |
-| | G6 | Sensor 3 |
-| | G7 | GPIO |
+| | G4 | GPIO |
+| | G5 | Sensor 1 |
+| | G6 | Sensor 2 |
+| | G7 | Sensor 3 |
 | | G8 | Reserved for I2C |
 | | G9 | Reserved for I2C |
 | | G10 | Light 1 |
@@ -52,15 +52,15 @@
 
 | Port | Pin | Signal | Connection |
 | - | - |
-| **Front Port** | F1 | Vcc | VR-Top |
-| | F2, F3, F4 | GND | Reset SW, Min/Max SW Common, VR-Bottom, Main LED K, Indicator LED K |
+| **Front Port** | F1 | Vcc | VR-Top, LED Kathodes |
+| | F2, F3, F4 | GND | Reset SW, Min/Max SW Common, VR-Bottom |
 | | F5 | Reset | Reset SW |
 | | F6 | Arduino-D2 | Min SW |
 | | F7 | Arduino-D3 | Max SW |
 | | F8 | Arduino-A3 | VR-Center |
-| **Light Port** | L1 | TLC5940-OUT0 | B13/G10 |
-| | L2 | TLC5940-OUT1 | B14/G11 |
-| | L3 | TLC5940-OUT2 | B15/G12 |
+| **Light Port** | L1 | TLC5940-OUT0 | |
+| | L2 | TLC5940-OUT1 | |
+| | L3 | TLC5940-OUT2 | |
 | | L4 | TLC5940-OUT3 | Main LED |
 | | L5 | TLC5940-OUT4 | LED1R |
 | | L6 | TLC5940-OUT5 | LED1G |
@@ -74,32 +74,32 @@
 | | L14 | TLC5940-OUT13 | |
 | | L15 | TLC5940-OUT14 | |
 | | L16 | TLC5940-OUT15 | |
-| **Back Port** | B1 | +5V | Arduino Regulated Power |
-| | B2 | GND | GND |
-| | B3 | Vin (+7-12V) | Arduino Power |
-| | B4 | Arduino-D6 | TLC5940-Mode, D8 |
-| | B5 | Arduino-D8 | Xbar |
-| | B6 | Arduino-D9 | G3 (gdetect) |
-| | B7 | Arduino-A0 | G4 |
-| | B8 | Arduino-A1 | G5 |
-| | B9 | Arduino-A2 | G6 |
-| | B10 | Arduino-D10 | G7 (GPIO) |
-| | B11 | Arduino-A4 | G8 |
-| | B12 | Arduino-A5 | G9 |
-| | B13 | TLC5940-OUT0 | L1, G10 |
-| | B14 | TLC5940-OUT1 | L2, G11 |
-| | B15 | TLC5940-OUT2 | L3, G12 |
-| | B16 | Vin | X1 |
-| | B17 | RX+ | X3 |
+| **Back Port** | B1 | Vcc | Arduino Regulated Power |
+| | B2 | GND | |
+| | B3 | Vin | Arduino Power |
+| | B4 | GND | |
+| | B5 | Vin | |
+| | B6 | GND | |
+| | B7 | Arduino-D9 | G3 |
+| | B8 | GND | |
+| | B9 | Arduino-D10 | G4 |
+| | B10 | TLC5940-OUT0 | G10, L1 |
+| | B11 | Arduino-A0 | G5 |
+| | B12 | TLC5940-OUT1 | G11, L2 |
+| | B13 | Arduino-A1 | G6 |
+| | B14 | TLC5940-OUT2 | G12, L3 |
+| | B15 | Arduino-A2 | G7 |
+| | B16 | RX+ | X3 |
+| | B17 | Arduino-A4 | G8 |
 | | B18 | RX- | X4 |
-| | B19 | TX+ | X5 |
-| | B20 | TX- | X6 |
-| | B21 | Arduino-D12 | |
-| | B22 | Arduino-A6 | M0 (mdetect) |
-| | B23 | Vcc/R220 | M2 (MIDI OUT SOURCE) |
-| | B24 | TX-OC | M1 (MIDI OUT SINK) |
-| | B25 | RX-OK-A | m2 (MIDI IN ANNODE) |
-| | B26 | RX-OK-K | m1 (MIDI IN KATHODE) |
+| | B19 | Arduino-A5 | G9 |
+| | B20 | TX+ | X5 |
+| | B21 | Arduino-A6 | M2SW |
+| | B22 | TX- | X6 |
+| | B23 | Vcc/R220 | M2 |
+| | B24 | MIDIRXA | m2 |
+| | B25 | MIDITX | M1 |
+| | B26 | MIDIRXK | m1 |
 | **Drive Port** | D1 | Vcc | |
 | | D2 | GND | |
 | | D3 | TLC5940-SOUT | Ext TLC5940-SIN|
@@ -182,8 +182,16 @@
 * Con PH 8p plug
 * Con PH 16p plug
 * Flat cable
-* PH harnes 8p
-* PH harnes 16p
+* PH Housing 8p
+* PH Housing 16p
+* PH Harnes 8p
+* PH Harnes 16p
+* Con stereo mini pin plug x2
+* Con DIN 5p jack connector
+* Con HR10A 12p plug
+* Cable 4p
+* Flat cable 26p
+* Sensor for testing
 
 
 
