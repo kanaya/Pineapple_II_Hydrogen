@@ -10,9 +10,14 @@
 | Min SW | Min-set |
 | Max SW | Max-set |
 | Main LED | Power Indicator |
-| LED 1 | Min-value is set |
-| LED 2 | TX signal |
-| LED 3 | Max-value is set |
+| LED 1 | Max-value is set |
+| LED 2 | |
+| LED 3 | |
+| LED 4 | |
+| LED 5 | |
+| LED 6 | |
+| LED 7 | Min-value is set |
+
 
 ### External Ports
 
@@ -64,10 +69,10 @@
 | | L4 | TLC5940-OUT3 | LED 1 |
 | | L5 | TLC5940-OUT4 | LED 2 |
 | | L6 | TLC5940-OUT5 | LED 3 |
-| | L7 | TLC5940-OUT6 | |
-| | L8 | TLC5940-OUT7 | |
-| | L9 | TLC5940-OUT8 | |
-| | L10 | TLC5940-OUT9 | |
+| | L7 | TLC5940-OUT6 | LED 4 |
+| | L8 | TLC5940-OUT7 | LED 5 |
+| | L9 | TLC5940-OUT8 | LED 6 |
+| | L10 | TLC5940-OUT9 | LED 7 |
 | | L11 | TLC5940-OUT10 | |
 | | L12 | TLC5940-OUT11 | |
 | | L13 | TLC5940-OUT12 | |

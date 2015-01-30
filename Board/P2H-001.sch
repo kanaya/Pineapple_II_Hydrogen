@@ -9024,28 +9024,31 @@ Copyright 2015 by Pineapple.cc</text>
 <label x="20.32" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED3R" class="0">
+<net name="LED4" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT6"/>
 <wire x1="215.9" y1="48.26" x2="215.9" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="91.44" x2="215.9" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="7"/>
+<label x="20.32" y="91.44" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED3B" class="0">
+<net name="LED6" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT8"/>
 <wire x1="220.98" y1="48.26" x2="220.98" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="96.52" x2="220.98" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="9"/>
+<label x="20.32" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED3G" class="0">
+<net name="LED5" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT7"/>
 <wire x1="218.44" y1="48.26" x2="218.44" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="93.98" x2="218.44" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="8"/>
+<label x="20.32" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SWMIN" class="0">
@@ -9229,15 +9232,16 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="CN1" gate="G$1" pin="14"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="LED7" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT9"/>
 <wire x1="223.52" y1="48.26" x2="223.52" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="99.06" x2="223.52" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="10"/>
+<label x="20.32" y="99.06" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="LED8" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT10"/>
 <wire x1="226.06" y1="48.26" x2="226.06" y2="101.6" width="0.1524" layer="91"/>
@@ -9245,7 +9249,7 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="CN1" gate="G$1" pin="11"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="LED9" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT11"/>
 <wire x1="228.6" y1="48.26" x2="228.6" y2="104.14" width="0.1524" layer="91"/>
@@ -9288,13 +9292,9 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="165.1" y1="-58.42" x2="167.64" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="-58.42" x2="170.18" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="-58.42" x2="167.64" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="167.64" y1="-45.72" x2="134.62" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="-45.72" x2="127" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="167.64" y="-58.42"/>
 <label x="149.86" y="-45.72" size="1.778" layer="95"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="-45.72" x2="134.62" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="134.62" y="-45.72"/>
-<wire x1="134.62" y1="-45.72" x2="127" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="127" y1="-45.72" x2="127" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="SV1" gate="1" pin="26"/>
 <wire x1="127" y1="53.34" x2="144.78" y2="53.34" width="0.1524" layer="91"/>
@@ -9321,7 +9321,7 @@ Copyright 2015 by Pineapple.cc</text>
 <label x="111.76" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="MDETECT" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="21"/>
 <wire x1="160.02" y1="48.26" x2="185.42" y2="48.26" width="0.1524" layer="91"/>
@@ -9330,17 +9330,29 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="121.92" y1="7.62" x2="121.92" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="MC1" gate="G$1" pin="A6"/>
 <wire x1="121.92" y1="10.16" x2="109.22" y2="10.16" width="0.1524" layer="91"/>
+<label x="111.76" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MIDIRXA" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="24"/>
 <wire x1="144.78" y1="50.8" x2="129.54" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="50.8" x2="129.54" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="50.8" x2="129.54" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="129.54" y1="-40.64" x2="177.8" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-17.78" x2="129.54" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-40.64" x2="134.62" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-40.64" x2="177.8" y2="-40.64" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="-40.64" x2="177.8" y2="-43.18" width="0.1524" layer="91"/>
 <label x="149.86" y="-40.64" size="1.778" layer="95"/>
+<pinref part="MC1" gate="G$1" pin="A7"/>
+<wire x1="109.22" y1="12.7" x2="119.38" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="12.7" x2="119.38" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-17.78" x2="129.54" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="129.54" y="-17.78"/>
+<label x="111.76" y="12.7" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="-40.64" x2="134.62" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="134.62" y="-40.64"/>
 </segment>
 </net>
 </nets>
