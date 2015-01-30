@@ -9,10 +9,10 @@
 | Reset SW | Reset |
 | Min SW | Min-set |
 | Max SW | Max-set |
-| Main LED | Power Indicator, Note 1 is received |
-| LED 1 | Min-value is set (Blue), Note 2 is received (Green) |
-| LED 2 | TX signal (White), Note 3 is received (Green) |
-| LED 3 | Max-value is set (Yellow), Note 4 is received (Green) |
+| Main LED | Power Indicator |
+| LED 1 | Min-value is set |
+| LED 2 | TX signal |
+| LED 3 | Max-value is set |
 
 ### External Ports
 
@@ -58,22 +58,22 @@
 | | F6 | Arduino-D2 | Min SW |
 | | F7 | Arduino-D3 | Max SW |
 | | F8 | Arduino-A3 | VR-Center |
-| **Light Port** | L1 | TLC5940-OUT0 | |
-| | L2 | TLC5940-OUT1 | |
-| | L3 | TLC5940-OUT2 | |
-| | L4 | TLC5940-OUT3 | Main LED |
-| | L5 | TLC5940-OUT4 | LED1R |
-| | L6 | TLC5940-OUT5 | LED1G |
-| | L7 | TLC5940-OUT6 | LED1B |
-| | L8 | TLC5940-OUT7 | LED2R |
-| | L9 | TLC5940-OUT8 | LED2G |
-| | L10 | TLC5940-OUT9 | LED2B |
-| | L11 | TLC5940-OUT10 | LED3R |
-| | L12 | TLC5940-OUT11 | LED3G |
-| | L13 | TLC5940-OUT12 | LED3B|
+| **Light Port** | L1 | TLC5940-OUT0 | Shared with G10 |
+| | L2 | TLC5940-OUT1 | Shared with G11 |
+| | L3 | TLC5940-OUT2 | Shared with G12 |
+| | L4 | TLC5940-OUT3 | LED 1 |
+| | L5 | TLC5940-OUT4 | LED 2 |
+| | L6 | TLC5940-OUT5 | LED 3 |
+| | L7 | TLC5940-OUT6 | |
+| | L8 | TLC5940-OUT7 | |
+| | L9 | TLC5940-OUT8 | |
+| | L10 | TLC5940-OUT9 | |
+| | L11 | TLC5940-OUT10 | |
+| | L12 | TLC5940-OUT11 | |
+| | L13 | TLC5940-OUT12 | |
 | | L14 | TLC5940-OUT13 | |
 | | L15 | TLC5940-OUT14 | |
-| | L16 | TLC5940-OUT15 | |
+| | L16 | TLC5940-OUT15 | LED Main |
 | **Back Port** | B1 | Vcc | Arduino Regulated Power |
 | | B2 | GND | |
 | | B3 | Vin | Arduino Power |

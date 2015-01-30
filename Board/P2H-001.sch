@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -8339,7 +8339,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
-<text x="259.08" y="-71.12" size="1.778" layer="91">Pineapple II Hydrogen 0.2.0
+<text x="259.08" y="-71.12" size="1.778" layer="91">Pineapple II Hydrogen 0.3.0
 Copyright 2015 by Pineapple.cc</text>
 </plain>
 <instances>
@@ -9006,20 +9006,22 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="S1" gate="BEF1" pin="S"/>
 </segment>
 </net>
-<net name="LED2G" class="0">
+<net name="LED2" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT4"/>
 <wire x1="210.82" y1="48.26" x2="210.82" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="86.36" x2="210.82" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="5"/>
+<label x="20.32" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED2B" class="0">
+<net name="LED3" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT5"/>
 <wire x1="213.36" y1="48.26" x2="213.36" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="88.9" x2="213.36" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="6"/>
+<label x="20.32" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED3R" class="0">
@@ -9104,7 +9106,7 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="177.8" y1="40.64" x2="160.02" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="LEDA" class="0">
+<net name="G10" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT0"/>
 <wire x1="200.66" y1="76.2" x2="200.66" y2="48.26" width="0.1524" layer="91"/>
@@ -9115,9 +9117,10 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="144.78" y1="33.02" x2="142.24" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="33.02" x2="142.24" y2="76.2" width="0.1524" layer="91"/>
 <junction x="142.24" y="76.2"/>
+<label x="20.32" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$12" class="0">
+<net name="G11" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT1"/>
 <wire x1="203.2" y1="78.74" x2="203.2" y2="48.26" width="0.1524" layer="91"/>
@@ -9128,9 +9131,10 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="144.78" y1="35.56" x2="139.7" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="35.56" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
 <junction x="139.7" y="78.74"/>
+<label x="20.32" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$14" class="0">
+<net name="G12" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT2"/>
 <wire x1="205.74" y1="81.28" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
@@ -9141,6 +9145,7 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="144.78" y1="38.1" x2="137.16" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="38.1" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
 <junction x="137.16" y="81.28"/>
+<label x="20.32" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GPIO" class="0">
@@ -9161,12 +9166,13 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="CN1" gate="G$1" pin="15"/>
 </segment>
 </net>
-<net name="N$25" class="0">
+<net name="LEDMAIN" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT15"/>
 <wire x1="238.76" y1="48.26" x2="238.76" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="114.3" x2="238.76" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="16"/>
+<label x="20.32" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VR" class="0">
@@ -9247,12 +9253,13 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="CN1" gate="G$1" pin="12"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="LED1" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="OUT3"/>
 <wire x1="208.28" y1="48.26" x2="208.28" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="83.82" x2="5.08" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="CN1" gate="G$1" pin="4"/>
+<label x="20.32" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SWRST" class="0">
