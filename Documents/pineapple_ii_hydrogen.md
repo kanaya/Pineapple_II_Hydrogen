@@ -10,13 +10,17 @@
 | Min SW | Min-set |
 | Max SW | Max-set |
 | Main LED | Power Indicator |
-| LED 1 | Max-value is set |
-| LED 2 | |
-| LED 3 | |
-| LED 4 | |
-| LED 5 | |
-| LED 6 | |
-| LED 7 | Min-value is set |
+
+|| 1 | 2 | 3 | 4 | 5 |
+| - | - | - | - | - | - |
+| Max | ■ | | | | |
+| | | | ■ | | |
+| | | | ■ | ■ | |
+| Th. | ■ | | ■ | ■ |  |
+| | | | ■ | ■ | ■ |
+| | | | ■ | ■ | ■ |
+| Min | ■ | | ■ | ■ | ■ |
+
 
 
 ### External Ports
