@@ -9,18 +9,8 @@
 | Reset SW | Reset |
 | Min SW | Min-set |
 | Max SW | Max-set |
-| Main LED | Power Indicator |
-
-|| 1 | 2 | 3 | 4 | 5 |
-| - | - | - | - | - | - |
-| Max | ■ | | | | |
-| | | | ■ | | |
-| | | | ■ | ■ | |
-| Th. | ■ | | ■ | ■ |  |
-| | | | ■ | ■ | ■ |
-| | | | ■ | ■ | ■ |
-| Min | ■ | | ■ | ■ | ■ |
-
+| VR | Threshold |
+| Display | Min/Max/Th/Level indicator |
 
 
 ### External Ports
@@ -36,7 +26,7 @@
 | **MIDI IN** | m1 | MIDI IN KATHODE (DIN #5) |
 | | m2 | MIDI IN ANODE (DIN #4), vdetect |
 | | m3 | GND |
-| **XMIDI** | X1 | Vin |
+| **XMIDI** | X1 | xdetect |
 | | X2 | GND |
 | | X3 | RX+ |
 | | X4 | RX- |
@@ -45,12 +35,12 @@
 | **GeekPort II** | G1 | Vcc (+5V) |
 | | G2 | GND |
 | | G3 | gdetect |
-| | G4 | GPIO |
+| | G4 | gselect |
 | | G5 | Sensor 1 |
 | | G6 | Sensor 2 |
 | | G7 | Sensor 3 |
-| | G8 | Reserved for I2C |
-| | G9 | Reserved for I2C |
+| | G8 | I2C SDA |
+| | G9 | I2C SCL |
 | | G10 | Light 1 |
 | | G11 | Light 2 |
 | | G12 | Light 3 |
@@ -61,64 +51,66 @@
 
 | Port | Pin | Signal | Connection |
 | - | - |
-| **Front Port** | F1 | Vcc | VR-Top, LED Kathodes |
+| **Front Port** | F1 | Vcc | VR-Top |
 | | F2, F3, F4 | GND | Reset SW, Min/Max SW Common, VR-Bottom |
 | | F5 | Reset | Reset SW |
 | | F6 | Arduino-D2 | Min SW |
 | | F7 | Arduino-D3 | Max SW |
 | | F8 | Arduino-A3 | VR-Center |
-| **Light Port** | L1 | TLC5940-OUT0 | Shared with G10 |
-| | L2 | TLC5940-OUT1 | Shared with G11 |
-| | L3 | TLC5940-OUT2 | Shared with G12 |
-| | L4 | TLC5940-OUT3 | LED 1 |
-| | L5 | TLC5940-OUT4 | LED 2 |
-| | L6 | TLC5940-OUT5 | LED 3 |
-| | L7 | TLC5940-OUT6 | LED 4 |
-| | L8 | TLC5940-OUT7 | LED 5 |
-| | L9 | TLC5940-OUT8 | LED 6 |
-| | L10 | TLC5940-OUT9 | LED 7 |
-| | L11 | TLC5940-OUT10 | |
-| | L12 | TLC5940-OUT11 | |
-| | L13 | TLC5940-OUT12 | |
-| | L14 | TLC5940-OUT13 | |
-| | L15 | TLC5940-OUT14 | |
-| | L16 | TLC5940-OUT15 | LED Main |
-| **Back Port** | B1 | Vcc | Arduino Regulated Power |
+| **Light Port** | L1 | DIG0 | |
+| | L2 | DIG1 | |
+| | L3 | DIG2 | |
+| | L4 | DIG3 | |
+| | L5 | DIG4 | |
+| | L6 | DIG5 | |
+| | L7 | DIG6 | |
+| | L8 | DIG7 | |
+| | L9 | SEG0 | |
+| | L10 | SEG1 | |
+| | L11 | SEG2 | |
+| | L12 | SEG3 | |
+| | L13 | SEG4 | |
+| | L14 | SEG5 | |
+| | L15 | SEG6 | |
+| | L16 | SEG7 | |
+| **Back Port** | B1 | Vcc | G01 |
 | | B2 | GND | |
-| | B3 | Vin | Arduino Power |
+| | B3 | Sensor 1 | G05 |
 | | B4 | GND | |
-| | B5 | Vin | |
+| | B5 | Sensor 2 | G06 |
 | | B6 | GND | |
-| | B7 | Arduino-D9 | G3 |
+| | B7 | Sensor 3 | G07 |
 | | B8 | GND | |
-| | B9 | Arduino-D10 | G4 |
-| | B10 | TLC5940-OUT0 | G10, L1 |
-| | B11 | Arduino-A0 | G5 |
-| | B12 | TLC5940-OUT1 | G11, L2 |
-| | B13 | Arduino-A1 | G6 |
-| | B14 | TLC5940-OUT2 | G12, L3 |
-| | B15 | Arduino-A2 | G7 |
-| | B16 | RX+ | X3 |
-| | B17 | Arduino-A4 | G8 |
-| | B18 | RX- | X4 |
-| | B19 | Arduino-A5 | G9 |
-| | B20 | TX+ | X5 |
-| | B21 | Arduino-A6 | M2SW |
-| | B22 | TX- | X6 |
-| | B23 | Vcc/R220 | M2 |
-| | B24 | MIDIRXA | m2 |
-| | B25 | MIDITX | M1 |
-| | B26 | MIDIRXK | m1 |
+| | B9 | I2C SDA | G08 |
+| | B10 | Vin | |
+| | B11 | I2C SDL | G09 |
+| | B12 | mdetect | M2SW |
+| | B13 | gdetect | G03 |
+| | B14 | xdetect | X01 |
+| | B15 | gselect | G04 |
+| | B16 | RXA | m2 |
+| | B17 | Light 1 | G10 |
+| | B18 | RXK | m1 |
+| | B19 | Light 2 | G11 |
+| | B20 | TXV | M2 |
+| | B21 | Light3 | G12 |
+| | B22 | TX | M1 |
+| | B23 | RX+ | X3 |
+| | B24 | RX- | X4 |
+| | B25 | TX+ | X5 |
+| | B26 | TX- | X6 |
 | **Drive Port** | D1 | Vcc | |
 | | D2 | GND | |
-| | D3 | TLC5940-SOUT | Ext TLC5940-SIN|
-| | D4 | Arduino-D13/TLC5940-SCLCK | Ext TLC5940-SCLCK |
-| | D5 | Arduino-D4/TLC5940-BLANK | Ext TLC5940-BLANK |
-| | D6 | Arduino-D7/TLC5940-XLAT | Ext TLC5940-XLAT|
-| | D7 | Arduino-D5/TLC5940-GSCLCK | Ext TLC5940-GSCLCK|
-| | D8 | Arduino-D6/TLC5940-MODE | Ext TLC5940-MODE, B4 |
-| | D9 | Vin | |
-| | D10 | GND | |
+| | D3 | MOSI | |
+| | D4 | DOUT | |
+| | D5 | SCLCK | |
+| | D6 | LOAD | |
+| | D7 | BLANK | |
+| | D8 | XLAT | |
+| | D9 | GSCLCK | |
+| | D10 | I2C SDA | |
+| | D11 | I2C SCL | |
+| | D12 | Vin | |
 
 ### Arduino Pin Assignment
 

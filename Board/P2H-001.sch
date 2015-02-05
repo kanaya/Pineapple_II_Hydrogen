@@ -8621,7 +8621,7 @@ Copyright 2015 by Pineapple.cc</text>
 </plain>
 <instances>
 <instance part="SUPPLY1" gate="GND" x="20.32" y="-22.86"/>
-<instance part="R4" gate="G$1" x="182.88" y="71.12" rot="R90"/>
+<instance part="R4" gate="G$1" x="182.88" y="73.66" rot="R90"/>
 <instance part="R5" gate="G$1" x="177.8" y="-33.02" rot="R90"/>
 <instance part="R2" gate="G$1" x="142.24" y="-53.34"/>
 <instance part="IC4" gate="A" x="162.56" y="-60.96"/>
@@ -8959,7 +8959,7 @@ Copyright 2015 by Pineapple.cc</text>
 <segment>
 <pinref part="SUPPLY13" gate="G$1" pin="VCC"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="182.88" y1="104.14" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="104.14" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY23" gate="G$1" pin="VCC"/>
@@ -9083,14 +9083,14 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="111.76" y1="-45.72" x2="114.3" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="114.3" y="-45.72"/>
-<pinref part="SV1" gate="1" pin="26"/>
-<wire x1="187.96" y1="58.42" x2="172.72" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="58.42" x2="172.72" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="55.88" x2="172.72" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="-38.1" x2="114.3" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="-38.1" x2="114.3" y2="-45.72" width="0.1524" layer="91"/>
 <label x="114.3" y="-38.1" size="1.778" layer="95"/>
 <label x="147.32" y="-38.1" size="1.778" layer="95"/>
-<label x="177.8" y="58.42" size="1.778" layer="95"/>
+<pinref part="SV1" gate="1" pin="24"/>
+<wire x1="172.72" y1="55.88" x2="187.96" y2="55.88" width="0.1524" layer="91"/>
+<label x="180.34" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCLCK" class="0">
@@ -9143,16 +9143,16 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="IC2" gate="G$1" pin="A"/>
 <wire x1="91.44" y1="-45.72" x2="99.06" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="-27.94" x2="99.06" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="24"/>
-<wire x1="187.96" y1="55.88" x2="175.26" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="55.88" x2="175.26" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="-27.94" x2="99.06" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="55.88" x2="233.68" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="-27.94" x2="99.06" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="-45.72" x2="99.06" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="99.06" y="-45.72"/>
 <label x="147.32" y="-27.94" size="1.778" layer="95"/>
 <label x="114.3" y="-27.94" size="1.778" layer="95"/>
-<label x="177.8" y="55.88" size="1.778" layer="95"/>
+<pinref part="SV1" gate="1" pin="23"/>
+<wire x1="233.68" y1="55.88" x2="203.2" y2="55.88" width="0.1524" layer="91"/>
+<label x="208.28" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TX+" class="0">
@@ -9160,12 +9160,12 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="IC5" gate="G$1" pin="A"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="215.9" y1="-45.72" x2="231.14" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="23"/>
 <wire x1="231.14" y1="-45.72" x2="233.68" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="203.2" y1="55.88" x2="231.14" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="55.88" x2="231.14" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="58.42" x2="231.14" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="231.14" y="-45.72"/>
-<label x="208.28" y="55.88" size="1.778" layer="95"/>
+<pinref part="SV1" gate="1" pin="25"/>
+<wire x1="231.14" y1="58.42" x2="203.2" y2="58.42" width="0.1524" layer="91"/>
+<label x="208.28" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TX-" class="0">
@@ -9175,11 +9175,13 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="-48.26" x2="246.38" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="246.38" y1="-45.72" x2="243.84" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="25"/>
-<wire x1="203.2" y1="58.42" x2="246.38" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="58.42" x2="246.38" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="66.04" x2="246.38" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="246.38" y="-45.72"/>
-<label x="208.28" y="58.42" size="1.778" layer="95"/>
+<wire x1="246.38" y1="66.04" x2="180.34" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="66.04" x2="180.34" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="SV1" gate="1" pin="26"/>
+<wire x1="180.34" y1="58.42" x2="187.96" y2="58.42" width="0.1524" layer="91"/>
+<label x="180.34" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -9405,11 +9407,11 @@ Copyright 2015 by Pineapple.cc</text>
 <segment>
 <wire x1="83.82" y1="20.32" x2="73.66" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="20.32" x2="73.66" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="-2.54" x2="233.68" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="-2.54" x2="241.3" y2="-2.54" width="0.1524" layer="91"/>
 <label x="114.3" y="-2.54" size="1.778" layer="95"/>
 <label x="76.2" y="20.32" size="1.778" layer="95"/>
-<wire x1="233.68" y1="-2.54" x2="233.68" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="233.68" y1="-20.32" x2="287.02" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="-2.54" x2="241.3" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="-20.32" x2="287.02" y2="-20.32" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="-20.32" x2="287.02" y2="0" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="0" x2="274.32" y2="0" width="0.1524" layer="91"/>
 <label x="233.68" y="-20.32" size="1.778" layer="95"/>
@@ -9533,7 +9535,7 @@ Copyright 2015 by Pineapple.cc</text>
 <net name="N$12" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="182.88" y1="66.04" x2="182.88" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="68.58" x2="182.88" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="SV1" gate="1" pin="20"/>
 <wire x1="182.88" y1="50.8" x2="187.96" y2="50.8" width="0.1524" layer="91"/>
 </segment>
@@ -9544,7 +9546,7 @@ Copyright 2015 by Pineapple.cc</text>
 <wire x1="187.96" y1="53.34" x2="177.8" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="53.34" x2="177.8" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<label x="177.8" y="53.34" size="1.778" layer="95"/>
+<label x="180.34" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A2" class="0">
