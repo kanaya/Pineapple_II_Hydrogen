@@ -3428,7 +3428,6 @@ design rules under a new name.</description>
 <signal name="VCC">
 <contactref element="IC4" pad="14"/>
 <contactref element="IC1" pad="16"/>
-<contactref element="OK1" pad="7"/>
 <contactref element="IC2" pad="8"/>
 <contactref element="IC5" pad="2"/>
 <contactref element="IC5" pad="3"/>
@@ -3447,6 +3446,7 @@ design rules under a new name.</description>
 <contactref element="R7" pad="2"/>
 <contactref element="MC1" pad="21"/>
 <contactref element="MC2" pad="19"/>
+<contactref element="OK1" pad="7"/>
 <wire x1="9.144" y1="23.7744" x2="8.001" y2="23.7744" width="0.254" layer="1"/>
 <wire x1="12.573" y1="20.3454" x2="9.144" y2="23.7744" width="0.254" layer="1"/>
 <wire x1="8.001" y1="23.7744" x2="8" y2="24" width="0.254" layer="1"/>
