@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -8588,9 +8588,11 @@ Copyright 2015 by Pineapple.cc</text>
 </bus>
 <bus name="SEL[0..1]">
 <segment>
-<wire x1="134.62" y1="60.96" x2="134.62" y2="58.42" width="0.762" layer="92"/>
-<wire x1="134.62" y1="58.42" x2="134.62" y2="15.24" width="0.762" layer="92"/>
-<wire x1="134.62" y1="58.42" x2="134.62" y2="12.7" width="0.762" layer="92"/>
+<wire x1="134.62" y1="60.96" x2="134.62" y2="7.62" width="0.762" layer="92"/>
+<wire x1="134.62" y1="7.62" x2="132.08" y2="5.08" width="0.762" layer="92" curve="-90"/>
+<wire x1="132.08" y1="5.08" x2="96.52" y2="5.08" width="0.762" layer="92"/>
+<wire x1="96.52" y1="5.08" x2="93.98" y2="7.62" width="0.762" layer="92" curve="-90"/>
+<wire x1="93.98" y1="7.62" x2="93.98" y2="10.16" width="0.762" layer="92"/>
 </segment>
 </bus>
 <bus name="I2C[0..1]">
@@ -9533,13 +9535,6 @@ Copyright 2015 by Pineapple.cc</text>
 </net>
 <net name="SEL0" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="A6"/>
-<wire x1="83.82" y1="10.16" x2="132.08" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="10.16" x2="134.62" y2="12.7" width="0.1524" layer="91" curve="90"/>
-<label x="96.52" y="10.16" size="1.778" layer="95"/>
-<label x="124.46" y="10.16" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="IC3" gate="A" pin="A"/>
 <wire x1="124.46" y1="60.96" x2="132.08" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="60.96" x2="134.62" y2="58.42" width="0.1524" layer="91" curve="-90"/>
@@ -9548,17 +9543,22 @@ Copyright 2015 by Pineapple.cc</text>
 </net>
 <net name="SEL1" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="A7"/>
-<wire x1="83.82" y1="12.7" x2="132.08" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="12.7" x2="134.62" y2="15.24" width="0.1524" layer="91" curve="90"/>
-<label x="96.52" y="12.7" size="1.778" layer="95"/>
-<label x="124.46" y="12.7" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="IC3" gate="A" pin="B"/>
 <wire x1="124.46" y1="63.5" x2="132.08" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="63.5" x2="134.62" y2="60.96" width="0.1524" layer="91" curve="-90"/>
 <label x="124.46" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="A6"/>
+<wire x1="83.82" y1="10.16" x2="91.44" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="10.16" x2="93.98" y2="7.62" width="0.1524" layer="91" curve="-90"/>
+<label x="86.36" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="A7"/>
+<wire x1="83.82" y1="12.7" x2="91.44" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="12.7" x2="93.98" y2="10.16" width="0.1524" layer="91" curve="-90"/>
+<label x="86.36" y="12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="I2C0" class="0">
