@@ -6,7 +6,7 @@
 
 | SW/LED   | Function                   |
 | -------- | -------------------------- |
-| Reset SW | Reset                      |
+| Main SW  | Reset                      |
 | Min SW   | Min-set                    |
 | Max SW   | Max-set                    |
 | VR       | Threshold                  |
@@ -49,59 +49,58 @@
 
 ### Internal Buses
 
-| Bus       | Signal                  | Connection             |
-| --------- | ----------------------- | ---------------------- |
-| DIG[0..7] | DIG[0..7]               | Light Port             |
-| SEG[0..7] | SEG[DP..G]              | Light Port             |
-| M[0..3]   | RX+, RX-, TX+, TX-      | XMIDI                  |
-| A[0..2]   | A[0..2]                 | GeekPort II            |
-| I2C[0..1] | A4/SDA, A5/SCL          | GeekPort II            |
-| L[0..2]   | D5~, D6~, D9~           | GeekPort II            |
-| S[0..2]   | D11/MOSI, D13/SCLCK, D7 | LED Driver, Front Port |
+| Bus              | Signal                                     | Connection             |
+| ---------------- | ------------------------------------------ | ---------------------- |
+| LIGHTPORT[1..16] | DIG[0..7], SEG[0..7]                       | Light Port             |
+| MIDI[0..5]       | RXA, RXK, TXSRC, TXSNK, RX+, RX-, TX+, TX- | MIDI, XMIDI            |
+| A[0..2]          | A[0..2]                                    | GeekPort II            |
+| I2C[0..1]        | A4/SDA, A5/SCL                             | GeekPort II            |
+| L[0..2]          | D5~, D6~, D9~                              | GeekPort II            |
+| S[0..5]          | D11/MOSI, D13/SCLCK, D7, D2#, D3~#, D4     | LED Driver, Front Port |
+| DETECT[0..3]     | vdetect, gdetect, mdetect, xdetect         |                        |
 
 
 
 ### Internal Ports
 
 
-| Port           | Pin      | Signal       | Connection                             |
-| -------------- | -------- | ------------ | ---------------------------------------| 
-| **Front Port** | F1       | Vcc          | VR-Top                                 |
-|                | F2       | GND          | Reset SW, Min/Max SW Common, VR-Bottom |
-|                | F3       | D2#          | SW Main                                |
-|                | F4       | D3~#         | SW Max                                 |
-|                | F5       | D4           | SW Min                                 |
-|                | F6       | D11~/MOSI    | Reserved for LED Driver                |
-|                | F7       | D13/SCLCK    | Reserved for LED Driver                |
-|                | F8       | vdetect      | VR-Center                              |
-| **Light Port** | L[1..8]  | DIG[0..7]    | LED                                    |
-|                | L[9..16] | SEG[DP..G]   | LED                                    |
-| **Back Port**  | B1       | Vcc          | G1                                     |
-|                | B2       | GND          | G2                                     |
-|                | B3       | A0           | G5                                     |
-|                | B4       | GND          | M3 (DIN #3)                            |
-|                | B5       | A1           | G6                                     |
-|                | B6       | GND          | X1                                     |
-|                | B7       | A2           | G7                                     |
-|                | B8       | GND          | P2                                     |
-|                | B9       | A4/SDA       | G8                                     |
-|                | B10      | Vin          | P1                                     |
-|                | B11      | A5/SCL       | G9                                     |
-|                | B12      | gdetect      | G3                                     |
-|                | B13      | gselect      | G4                                     |
-|                | B14      | D5~/L0       | G10                                    |
-|                | B15      | D6~/L1       | G11                                    |
-|                | B16      | D9~/L2       | G12                                    |
-|                | B17      | mdetect      | M2SW                                   |
-|                | B18      | xdetect      | X1                                     |
-|                | B19      | RXA          | m2 (DIN #4)                            |
-|                | B20      | RXK          | m1 (DIN #5)                            |
-|                | B21      | TXSRC        | M2 (DIN #4)                            |
-|                | B22      | TXSNK        | M1 (DIN #5)                            |
-|                | B23      | RX+          | X3                                     |
-|                | B24      | RX-          | X4                                     |
-|                | B25      | TX+          | X5                                     |
-|                | B26      | TX-          | X6                                     |
+| Port           | Pin      | Signal                | Connection                             |
+| -------------- | -------- | --------------------- | ---------------------------------------| 
+| **Front Port** | F1       | Vcc                   | VR-Top                                 |
+|                | F2       | GND                   | Reset SW, Min/Max SW Common, VR-Bottom |
+|                | F3       | D2#                   | SW Main                                |
+|                | F4       | D3~#                  | SW Max                                 |
+|                | F5       | D4                    | SW Min                                 |
+|                | F6       | D11~/MOSI             | Reserved for LED Driver                |
+|                | F7       | D13/SCLCK             | Reserved for LED Driver                |
+|                | F8       | vdetect               | VR-Center                              |
+| **Light Port** | L[1..16] | DIG[0..7], SEG[DP..G] | LED                                    |
+| **Back Port**  | B1       | Vcc                   | G1                                     |
+|                | B2       | GND                   | G2                                     |
+|                | B3       | A0                    | G5                                     |
+|                | B4       | GND                   | M3 (DIN #3)                            |
+|                | B5       | A1                    | G6                                     |
+|                | B6       | GND                   | X1                                     |
+|                | B7       | A2                    | G7                                     |
+|                | B8       | GND                   | P2                                     |
+|                | B9       | A4/SDA                | G8                                     |
+|                | B10      | Vin                   | P1                                     |
+|                | B11      | A5/SCL                | G9                                     |
+|                | B12      | gdetect               | G3                                     |
+|                | B13      | gselect               | G4                                     |
+|                | B14      | D5~/L0                | G10                                    |
+|                | B15      | D6~/L1                | G11                                    |
+|                | B16      | D9~/L2                | G12                                    |
+|                | B17      | mdetect               | M2SW                                   |
+|                | B18      | xdetect               | X1                                     |
+|                | B19      | RXA                   | m2 (DIN #4)                            |
+|                | B20      | RXK                   | m1 (DIN #5)                            |
+|                | B21      | TXSRC                 | M2 (DIN #4)                            |
+|                | B22      | TXSNK                 | M1 (DIN #5)                            |
+|                | B23      | RX+                   | X3                                     |
+|                | B24      | RX-                   | X4                                     |
+|                | B25      | TX+                   | X5                                     |
+|                | B26      | TX-                   | X6                                     |
 
 
 ### Arduino Pin Assignment
@@ -114,26 +113,26 @@
 | RST              |                               |
 | D0/RX            | RX                            |
 | D1/TX            | TX                            |
-| D2#              | SW Main                       |
-| D3~#             | SW Max                        |
-| D4               | SW Min                        |
+| D2#              | SW Main (S3)                  |
+| D3~#             | SW Max  (S4)                  |
+| D4               | SW Min  (S5)                  |
 | D5~              | L0                            |
 | D6~              | L1                            |
-| D7               | LOAD                          |
+| D7               | LOAD (S2)                     |
 | D8               | XBAR                          |
 | D9~              | L2                            |
 | D10~             | gselect                       |
-| D11~/MOSI        | DIN                           |
+| D11~/MOSI        | DIN  (S0)                     |
 | D12/MISO         |                               |
-| D13/SCLCK        | DCLCK                         |
+| D13/SCLCK        | DCLCK (S1)                    |
 | A0               | A0                            |
 | A1               | A1                            |
 | A2               | A2                            |
 | A3               | _detect                       |
-| A4/SDA           | SDA                           |
-| A5/SCL           | SCL                           |
-| A6               | SEL0                          |
-| A7               | SEL1                          |
+| A4/SDA           | SDA (I2C0)                    |
+| A5/SCL           | SCL (I2C1)                    |
+| A6               | SELECT0                       |
+| A7               | SELECT1                       |
 
 ### Parts
 
