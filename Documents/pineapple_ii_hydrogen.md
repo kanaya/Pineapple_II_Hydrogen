@@ -6,9 +6,9 @@
 
 | SW/LED   | Function                   |
 | -------- | -------------------------- |
-| Main SW  | Reset                      |
 | Min SW   | Min-set                    |
 | Max SW   | Max-set                    |
+| Clear SW | Clear-Min/Max              |
 | VR       | Threshold                  |
 | Display  | Min/Max/Th/Level indicator |
 
@@ -68,9 +68,9 @@
 | -------------- | -------- | --------------------- | ---------------------------------------| 
 | **Front Port** | F1       | Vcc                   | VR-Top                                 |
 |                | F2       | GND                   | Reset SW, Min/Max SW Common, VR-Bottom |
-|                | F3       | D2#                   | SW Main                                |
-|                | F4       | D3~#                  | SW Max                                 |
-|                | F5       | D4                    | SW Min                                 |
+|                | F3       | D2#                   | SW Max                                 |
+|                | F4       | D3~#                  | SW Min                                 |
+|                | F5       | D4                    | SW Clear                               |
 |                | F6       | D11~/MOSI             | Reserved for LED Driver                |
 |                | F7       | D13/SCLCK             | Reserved for LED Driver                |
 |                | F8       | vdetect               | VR-Center                              |
