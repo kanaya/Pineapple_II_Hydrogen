@@ -131,11 +131,11 @@
 <wire x1="0" y1="72" x2="0" y2="0" width="0" layer="20"/>
 <dimension x1="0" y1="0" x2="0" y2="72" x3="-2" y3="36" textsize="1.778" layer="20"/>
 <dimension x1="0" y1="0" x2="72" y2="0" x3="36" y3="-2" textsize="1.778" layer="20"/>
-<hole x="4" y="4" drill="3.2"/>
-<hole x="4" y="68" drill="3.2"/>
-<hole x="68" y="68" drill="3.2"/>
-<hole x="68" y="4" drill="3.2"/>
-<hole x="8" y="4" drill="1"/>
+<hole x="3" y="3" drill="3.2"/>
+<hole x="3" y="69" drill="3.2"/>
+<hole x="69" y="69" drill="3.2"/>
+<hole x="69" y="3" drill="3.2"/>
+<hole x="8" y="3" drill="1"/>
 </plain>
 <libraries>
 <library name="rcl">
