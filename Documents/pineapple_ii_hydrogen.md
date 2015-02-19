@@ -49,22 +49,22 @@
 |                 | D8       |        | SCLCK                        | CTRL 7        |              | D13/SCLCK   |
 |                 | D9       |        | VR1                          | (ANLG 0)      |              | (A6)        |
 |                 | D10      |        | VR2                          | ANLG 1        |              | A7          |
-| **LightPort**   | L1       |        |                              | LDIG 0        |              |             |
-|                 | L2       |        |                              | LDIG 1        |              |             |
-|                 | L3       |        |                              | LDIG 2        |              |             |
-|                 | L4       |        |                              | LDIG 3        |              |             |
-|                 | L5       |        |                              | LDIG 4        |              |             |
-|                 | L6       |        |                              | LDIG 5        |              |             |
-|                 | L7       |        |                              | LDIG 6        |              |             |
-|                 | L8       |        |                              | LDIG 7        |              |             |
-|                 | L9       |        |                              | LSEG 0        |              |             |
-|                 | L10      |        |                              | LSEG 1        |              |             |
-|                 | L11      |        |                              | LSEG 2        |              |             |
-|                 | L12      |        |                              | LSEG 3        |              |             |
-|                 | L13      |        |                              | LSEG 4        |              |             |
-|                 | L14      |        |                              | LSEG 5        |              |             |
-|                 | L15      |        |                              | LSEG 6        |              |             |
-|                 | L16      |        |                              | LSEG 7        |              |             |
+| **LightPort**   | L1       |        |                              | LSEG 0        |              |             |
+|                 | L2       |        |                              | LSEG 1        |              |             |
+|                 | L3       |        |                              | LSEG 2        |              |             |
+|                 | L4       |        |                              | LSEG 3        |              |             |
+|                 | L5       |        |                              | LSEG 4        |              |             |
+|                 | L6       |        |                              | LSEG 5        |              |             |
+|                 | L7       |        |                              | LSEG 6        |              |             |
+|                 | L8       |        |                              | LSEG 7        |              |             |
+|                 | L9       |        |                              | LDIG 0        |              |             |
+|                 | L10      |        |                              | LDIG 1        |              |             |
+|                 | L11      |        |                              | LDIG 2        |              |             |
+|                 | L12      |        |                              | LDIG 3        |              |             |
+|                 | L13      |        |                              | LDIG 4        |              |             |
+|                 | L14      |        |                              | LDIG 5        |              |             |
+|                 | L15      |        |                              | LDIG 6        |              |             |
+|                 | L16      |        |                              | LDIG 7        |              |             |
 | **Internal**    | C1       |        | Vcc                          |               |              |             |
 |                 | C2       |        | GND                          |               |              |             |
 |                 | C3       |        | NC                           |               |              |             |
