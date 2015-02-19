@@ -2,14 +2,12 @@
 
 ## Interface
 
-### Panel and Ports
-
 | Port            | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Arduino Pin |
 | --------------- | -------- | ------ | ---------------------------- | ------------- | ------------ | ----------- |
 | **Panel**       | Max SW   |        | Max-set (DrivePort 3)        | CTRL 2        |              | D2INT       |
 |                 | Min SW   |        | Min-set (DrivePort 4)        | CTRL 3        |              | D3~INT      |
 |                 | Clear SW |        | Clear-Min/Max (DrivePort 5)  | CTRL 4        |              | D4          |
-|                 | VR1      |        | Threshold                    | ANLG 0        |              | A6          |
+|                 | VR1      |        | Threshold (DrivePort 9)      | ANLG 0        |              | A6          |
 |                 | Display  |        | Min/Max/Th/Level indicator   | LDIG, LSEG    |              |             |
 | **Power**       | P1       | Red    | Vcc (+5V)                    |               | B1           |             |
 |                 | P2       | Black  | GND [Black]                  |               | B[2,4,..,10] |             |
@@ -74,61 +72,46 @@
 |                 |          |        | Reset                        | CTRL 9        |              | RST         |
 
 
-## What's inside
-
-
-### Parts
-
-Obsolete
+## Parts
 
 * Logic board
-* Arduino Pro Mini 5V
-* 74LS07
-* 74LS157
-* LTC1485 x2
-* TLC5940
-* TLP552 or TLP2962
-* 1S1588
-* C 0.1u
-* C 0.01u x6
-* R 120 x2
-* R 220 x3
-* R 4.7k
-* R 22k
-* Con PH 8p side
-* Con PH 16p side
-* Con Harting 10p or Pinheader 2x5p
-* Con Harting 26p side
-* SW NKK G-13AP
-* Pinheader 1x2p x2
-* Pinheader 1x6p x1
-* Pinheader 1x12p x2
+* U1: Arduino Pro Mini 5V
+* U2: MAX7219
+* IC1: 4051N
+* IC2 and IC4: LTC1485 x2
+* IC3: 74LS07N
+* OK1: TLP552 or TLP2962
+* T1: 2SC1815Y
+* D1 to D3: 1S1588
+* LED1 and LED2: Green and Red LEDs
+* C1: 0.1u
+* C2 to C7: 0.01u x6
+* R1: 22k
+* R2: 10k
+* R3: 3.3k
+* R4, R8, and R9: 220
+* R5 and R6: 330 x2
+* R7 and R10: 120
+* K1 and K2: G5V-2
+* CN1: JST PH 16p side
+* CN2: JST PH 10p side
+* JP1: Pinheader 5p
+* JP2: Pinheader 1p
+* SV1: Harting 26p side
 * Case Takachi MX2-8-13
-* SW/LED NKK HB-15CKS2-4MBMS
-* SW Nidech Copal-8A
-* VR B 10k Supertech VR
+* SW: Nidech Copal-8A
+* SW:
+* VR: B 10k Supertech VR
 * Knob
-* LED Kathode-common full-color OSTA5131A x3
-* Small board
-* Con HR10A-7R-6P
-* Con HR10A-10R-12S
-* Con stereo mini pin jack EST MJ-074N
-* Con stereo mini pin jack w/ switch EST MJ-352W-C
-* Con DC jack EST MJ-17
-* Con Harting 26p plug
-* Con PH 8p plug
-* Con PH 16p plug
+* LED: Kathode-common full-color OSTA5131A x3
+* Con: HR10A-7R-6P
+* Con: HR10A-10R-12S
+* Con: stereo mini pin jack EST MJ-074N x2
+* Con: DC jack EST MJ-17
+* Con: Harting 26p plug
+* Con: JST PH 10p plug
+* Con: JST PH 16p plug
 * Flat cable
-* PH Housing 8p
-* PH Housing 16p
-* PH Harnes 8p
-* PH Harnes 16p
-* Con stereo mini pin plug x2
-* Con DIN 5p jack connector
-* Con HR10A 12p plug
-* Cable 4p
-* Flat cable 26p
-* Sensor for testing
 
 
 
