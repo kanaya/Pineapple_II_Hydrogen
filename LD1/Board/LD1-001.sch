@@ -7609,6 +7609,7 @@ Source:
 <pinref part="CN1" gate="G$1" pin="5"/>
 <wire x1="55.88" y1="-68.58" x2="-5.08" y2="-68.58" width="0.1524" layer="91"/>
 <junction x="55.88" y="-68.58"/>
+<label x="35.56" y="-68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MODE" class="0">
@@ -7629,6 +7630,7 @@ Source:
 <pinref part="CN1" gate="G$1" pin="8"/>
 <wire x1="45.72" y1="-76.2" x2="-5.08" y2="-76.2" width="0.1524" layer="91"/>
 <junction x="45.72" y="-76.2"/>
+<label x="35.56" y="-76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="BLANK" class="0">
@@ -7649,6 +7651,7 @@ Source:
 <pinref part="CN1" gate="G$1" pin="3"/>
 <wire x1="17.78" y1="-63.5" x2="-5.08" y2="-63.5" width="0.1524" layer="91"/>
 <junction x="17.78" y="-63.5"/>
+<label x="35.56" y="-63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCLCK" class="0">
@@ -7669,6 +7672,7 @@ Source:
 <pinref part="CN1" gate="G$1" pin="7"/>
 <wire x1="30.48" y1="-73.66" x2="-5.08" y2="-73.66" width="0.1524" layer="91"/>
 <junction x="30.48" y="-73.66"/>
+<label x="35.56" y="-73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$37" class="0">
@@ -7697,6 +7701,7 @@ Source:
 <pinref part="CN1" gate="G$1" pin="4"/>
 <wire x1="20.32" y1="-66.04" x2="-5.08" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="20.32" y="-66.04"/>
+<label x="35.56" y="-66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$46" class="0">

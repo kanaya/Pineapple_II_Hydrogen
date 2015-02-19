@@ -1,138 +1,81 @@
-# Pineapple II Hydrogen/0.2.0 Tech Doc
+# Pineapple II Hydrogen/0.6.0 Tech Doc
 
-## Exterior
+## Interface
 
-### Panel
+### Panel and Ports
 
-| SW/LED   | Function                   |
-| -------- | -------------------------- |
-| Min SW   | Min-set                    |
-| Max SW   | Max-set                    |
-| Clear SW | Clear-Min/Max              |
-| VR       | Threshold                  |
-| Display  | Min/Max/Th/Level indicator |
+| Port            | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Arduino Pin |
+| --------------- | -------- | ------ | ---------------------------- | ------------- | ------------ | ----------- |
+| **Panel**       | Max SW   |        | Max-set (DrivePort 3)        | CTRL 2        |              | D2INT       |
+|                 | Min SW   |        | Min-set (DrivePort 4)        | CTRL 3        |              | D3~INT      |
+|                 | Clear SW |        | Clear-Min/Max (DrivePort 5)  | CTRL 4        |              | D4          |
+|                 | VR1      |        | Threshold                    | ANLG 0        |              | A6          |
+|                 | Display  |        | Min/Max/Th/Level indicator   | LDIG, LSEG    |              |             |
+| **Power**       | P1       | Red    | Vcc (+5V)                    |               | B1           |             |
+|                 | P2       | Black  | GND [Black]                  |               | B[2,4,..,10] |             |
+| **MIDI OUT**    | M1       |        | TX+ OR MIDI OUT SRC (DIN #4) | MIDI 5        | B22          |             |
+|                 | M2       |        | TX- OR MIDI OUT SNK (DIN #5) | MIDI 6        | B24          |             |
+|                 | M3       |        | MSW (GND OR NC)              | MIDI 7        | B26          |             |
+|                 | M4       |        | GND (DIN #2)                 |               |              |             |
+| **MIDI IN**     | m1       |        | RX+ OR MIDI IN SRC (DIN #4)  | MIDI 2        | B16          |             |
+|                 | m2       |        | RX- OR MIDI IN SNK (DIN #5)  | MIDI 3        | B18          |             |
+|                 | m3       |        | mdetect (GND OR NC)          | MIDI 4        | B20          | D8          |
+|                 | m4       |        | GND                          |               |              |             |
+| **EXT**         | X1       | Red    | Vcc (Red)                    |               |              |             |
+|                 | X2       | Black  | GND (Black, Brown)           |               |              |             |
+|                 | X3       | Orange | TX (Orange)                  | MIDI 1        | B14          | D1/TX       |
+|                 | X4       | Yellow | RX (Yellow)                  | MIDI 0        | B12          | D0/RX       |
+|                 | X5       | Green  | RTS (Green)                  | CTRL 0        | B23          | DTR         |
+|                 | X6       | Brown  | xdetect (connect to Vcc)     | CTRL 1        | B25          |             |
+| **GeekPort II** | G1       | Red    | Vcc (+5V)                    |               |              |             |
+|                 | G2       | Black  | GND                          |               |              |             |
+|                 | G3       | Brown  | gdetect (connect to GND)     | GEEK 0        | B3           | A0          |
+|                 | G4       | Orange | In 0                         | GEEK 1        | B5           | A1          |
+|                 | G5       | Yellow | In 1                         | GEEK 2        | B7           | A2          |
+|                 | G6       | Green  | In 2                         | GEEK 3        | B9           | A3          |
+|                 | G7       | Blue   | I2C SDA                      | GEEK 4        | B11          | A4/SDA      |
+|                 | G8       | Purple | I2C SCL                      | GEEK 5        | B13          | A5/SCL      |
+|                 | G9       | Gray   | gselect                      | GEEK 6        | B15          | D5~         |
+|                 | G10      |        | Out 0                        | GEEK 7        | B17          | D6~         |
+|                 | G11      |        | Out 1                        | GEEK 8        | B19          | D9~         |
+|                 | G12      |        | Out 2                        | GEEK 9        | B21          | D10~        |
+| **DrivePort**   | D1       |        | Vcc                          |               |              |             |
+|                 | D2       |        | GND                          |               |              |             |
+|                 | D3       |        | Max-set                      | (CTRL 2)      |              | (D2INT)     |
+|                 | D4       |        | Min-set                      | (CTRL 3)      |              | (D3~INT)    |
+|                 | D5       |        | Clear-Min/Max                | (CTRL 4)      |              | (D4)        |
+|                 | D6       |        | MOSI                         | CTRL 5        |              | D11~/MOSI   |
+|                 | D7       |        | LOAD                         | CTRL 6        |              | D12/MISO    |
+|                 | D8       |        | SCLCK                        | CTRL 7        |              | D13/SCLCK   |
+|                 | D9       |        | VR1                          | (ANLG 0)      |              | (A6)        |
+|                 | D10      |        | VR2                          | ANLG 1        |              | A7          |
+| **LightPort**   | L1       |        |                              | LDIG 0        |              |             |
+|                 | L2       |        |                              | LDIG 1        |              |             |
+|                 | L3       |        |                              | LDIG 2        |              |             |
+|                 | L4       |        |                              | LDIG 3        |              |             |
+|                 | L5       |        |                              | LDIG 4        |              |             |
+|                 | L6       |        |                              | LDIG 5        |              |             |
+|                 | L7       |        |                              | LDIG 6        |              |             |
+|                 | L8       |        |                              | LDIG 7        |              |             |
+|                 | L9       |        |                              | LSEG 0        |              |             |
+|                 | L10      |        |                              | LSEG 1        |              |             |
+|                 | L11      |        |                              | LSEG 2        |              |             |
+|                 | L12      |        |                              | LSEG 3        |              |             |
+|                 | L13      |        |                              | LSEG 4        |              |             |
+|                 | L14      |        |                              | LSEG 5        |              |             |
+|                 | L15      |        |                              | LSEG 6        |              |             |
+|                 | L16      |        |                              | LSEG 7        |              |             |
+| **Internal**    | C1       |        | Vcc                          |               |              |             |
+|                 | C2       |        | GND                          |               |              |             |
+|                 | C3       |        | NC                           |               |              |             |
+|                 | C4       |        | SCL                          | (GEEK 5)      |              | (A5/SCL)    |
+|                 | C5       |        | SDA                          | (GEEK 4)      |              | (A4/SDA)    |
+| **Unconnected** |          |        | XBAR                         | CTRL 8        |              | D7          |
+|                 |          |        | Reset                        | CTRL 9        |              | RST         |
 
-
-### External Ports
-
-| Port            | Pin  | Signal                   |
-| --------------- | ---- | ------------------------ |
-| **Power**       | P1   | Vin (+7-12V)             |
-|                 | P2   | GND                      |
-| **MIDI OUT**    | M1   | MIDI OUT SINK (DIN #5)   |
-|                 | M2   | MIDI OUT SOURCE (DIN #4) |
-|                 | M2SW | mdetect                  |
-|                 | M3   | GND (DIN #2)             |
-| **MIDI IN**     | m1   | MIDI IN KATHODE (DIN #5) |
-|                 | m2   | MIDI IN ANODE (DIN #4)   |
-|                 | m3   | GND                      |
-| **XMIDI**       | X1   | xdetect                  |
-|                 | X2   | GND                      |
-|                 | X3   | RX+                      |
-|                 | X4   | RX-                      |
-|                 | X5   | TX+                      |
-|                 | X6   | TX-                      |
-| **GeekPort II** | G1   | Vcc (+5V)                |
-|                 | G2   | GND                      |
-|                 | G3   | gdetect                  |
-|                 | G4   | gselect                  |
-|                 | G5   | Sensor 1                 |
-|                 | G6   | Sensor 2                 |
-|                 | G7   | Sensor 3                 |
-|                 | G8   | I2C SDA                  |
-|                 | G9   | I2C SCL                  |
-|                 | G10  | Light 1                  |
-|                 | G11  | Light 2                  |
-|                 | G12  | Light 3                  |
 
 ## What's inside
 
-### Internal Buses
-
-| Bus              | Signal                                     | Connection             |
-| ---------------- | ------------------------------------------ | ---------------------- |
-| LIGHTPORT[1..16] | DIG[0..7], SEG[0..7]                       | Light Port             |
-| MIDI[0..5]       | RXA, RXK, TXSRC, TXSNK, RX+, RX-, TX+, TX- | MIDI, XMIDI            |
-| A[0..2]          | A[0..2]                                    | GeekPort II            |
-| I2C[0..1]        | A4/SDA, A5/SCL                             | GeekPort II            |
-| L[0..2]          | D5~, D6~, D9~                              | GeekPort II            |
-| S[0..5]          | D11/MOSI, D13/SCLCK, D7, D2#, D3~#, D4     | LED Driver, Front Port |
-| DETECT[0..3]     | vdetect, gdetect, mdetect, xdetect         |                        |
-
-
-
-### Internal Ports
-
-
-| Port           | Pin      | Signal                | Connection                             |
-| -------------- | -------- | --------------------- | ---------------------------------------| 
-| **Front Port** | F1       | Vcc                   | VR-Top                                 |
-|                | F2       | GND                   | Reset SW, Min/Max SW Common, VR-Bottom |
-|                | F3       | D2#                   | SW Max                                 |
-|                | F4       | D3~#                  | SW Min                                 |
-|                | F5       | D4                    | SW Clear                               |
-|                | F6       | D11~/MOSI             | Reserved for LED Driver                |
-|                | F7       | D13/SCLCK             | Reserved for LED Driver                |
-|                | F8       | vdetect               | VR-Center                              |
-| **Light Port** | L[1..16] | DIG[0..7], SEG[DP..G] | LED                                    |
-| **Back Port**  | B1       | Vcc                   | G1                                     |
-|                | B2       | GND                   | G2                                     |
-|                | B3       | A0                    | G5                                     |
-|                | B4       | GND                   | M3 (DIN #3)                            |
-|                | B5       | A1                    | G6                                     |
-|                | B6       | GND                   | X1                                     |
-|                | B7       | A2                    | G7                                     |
-|                | B8       | GND                   | P2                                     |
-|                | B9       | A4/SDA                | G8                                     |
-|                | B10      | Vin                   | P1                                     |
-|                | B11      | A5/SCL                | G9                                     |
-|                | B12      | gdetect               | G3                                     |
-|                | B13      | gselect               | G4                                     |
-|                | B14      | D5~/L0                | G10                                    |
-|                | B15      | D6~/L1                | G11                                    |
-|                | B16      | D9~/L2                | G12                                    |
-|                | B17      | mdetect               | M2SW                                   |
-|                | B18      | xdetect               | X1                                     |
-|                | B19      | RXA                   | m2 (DIN #4)                            |
-|                | B20      | RXK                   | m1 (DIN #5)                            |
-|                | B21      | TXSRC                 | M2 (DIN #4)                            |
-|                | B22      | TXSNK                 | M1 (DIN #5)                            |
-|                | B23      | RX+                   | X3                                     |
-|                | B24      | RX-                   | X4                                     |
-|                | B25      | TX+                   | X5                                     |
-|                | B26      | TX-                   | X6                                     |
-
-
-### Arduino Pin Assignment
-
-| Arduino Pro Mini | Signal                        |
-| ---------------- | ----------------------------- |
-| Vin              | +7-12V                        |
-| GND              | GND                           |
-| 5V               | +5V Regulated Power Out (Vcc) |
-| RST              |                               |
-| D0/RX            | RX                            |
-| D1/TX            | TX                            |
-| D2#              | SW Main (S3)                  |
-| D3~#             | SW Max  (S4)                  |
-| D4               | SW Min  (S5)                  |
-| D5~              | L0                            |
-| D6~              | L1                            |
-| D7               | LOAD (S2)                     |
-| D8               | XBAR                          |
-| D9~              | L2                            |
-| D10~             | gselect                       |
-| D11~/MOSI        | DIN  (S0)                     |
-| D12/MISO         |                               |
-| D13/SCLCK        | DCLCK (S1)                    |
-| A0               | A0                            |
-| A1               | A1                            |
-| A2               | A2                            |
-| A3               | _detect                       |
-| A4/SDA           | SDA (I2C0)                    |
-| A5/SCL           | SCL (I2C1)                    |
-| A6               | SELECT0                       |
-| A7               | SELECT1                       |
 
 ### Parts
 
