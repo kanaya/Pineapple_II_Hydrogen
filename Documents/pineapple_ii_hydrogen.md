@@ -82,7 +82,7 @@
 * IC3: 74LS07N
 * OK1: TLP552 or TLP2962
 * T1: 2SC1815Y
-* D1 to D3: 1S1588
+* D1 to D3: 1S1588 or similar
 * LED1 and LED2: Green and Red LEDs
 * C1: 0.1u
 * C2 to C7: 0.01u x6
@@ -100,13 +100,14 @@
 * SV1: Harting 26p side
 * Case Takachi MX2-8-13
 * SW: Nidech Copal-8A
-* SW:
+* SW: Miyama MS-402
 * VR: B 10k Supertech VR
 * Knob
-* LED: Kathode-common full-color OSTA5131A x3
+* LED: Kathode-common matrix LED LTP-305G
+* LED: 3mm Green LED PY3407S
 * Con: HR10A-7R-6P
 * Con: HR10A-10R-12S
-* Con: stereo mini pin jack EST MJ-074N x2
+* Con: 4p mini pin jack EST MJ-079 x2
 * Con: DC jack EST MJ-17
 * Con: Harting 26p plug
 * Con: JST PH 10p plug
