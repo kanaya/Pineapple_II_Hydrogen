@@ -2,7 +2,7 @@
 
 ## Interface
 
-| Port            | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Arduino Pin |
+| Panel/Port      | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Arduino Pin |
 | --------------- | -------- | ------ | ---------------------------- | ------------- | ------------ | ----------- |
 | **Panel**       | Max SW   |        | Max-set (DrivePort 3)        | CTRL 2        |              | D2INT       |
 |                 | Min SW   |        | Min-set (DrivePort 4)        | CTRL 3        |              | D3~INT      |
@@ -11,11 +11,11 @@
 |                 | Display  |        | Min/Max/Th/Level indicator   | LDIG, LSEG    |              |             |
 | **Power**       | P1       | Red    | Vcc (+5V)                    |               | B1           |             |
 |                 | P2       | Black  | GND [Black]                  |               | B[2,4,..,10] |             |
-| **MIDI OUT**    | M1       |        | TX+ OR MIDI OUT SRC (DIN #4) | MIDI 5        | B22          |             |
+| **XMIDI OUT**   | M1       |        | TX+ OR MIDI OUT SRC (DIN #4) | MIDI 5        | B22          |             |
 |                 | M2       |        | TX- OR MIDI OUT SNK (DIN #5) | MIDI 6        | B24          |             |
 |                 | M3       |        | MSW (GND OR NC)              | MIDI 7        | B26          |             |
 |                 | M4       |        | GND (DIN #2)                 |               |              |             |
-| **MIDI IN**     | m1       |        | RX+ OR MIDI IN SRC (DIN #4)  | MIDI 2        | B16          |             |
+| **XMIDI IN**    | m1       |        | RX+ OR MIDI IN SRC (DIN #4)  | MIDI 2        | B16          |             |
 |                 | m2       |        | RX- OR MIDI IN SNK (DIN #5)  | MIDI 3        | B18          |             |
 |                 | m3       |        | mdetect (GND OR NC)          | MIDI 4        | B20          | D8          |
 |                 | m4       |        | GND                          |               |              |             |
@@ -75,7 +75,7 @@
 ## Parts
 
 * Logic board
-* U1: Arduino Pro Mini 5V
+* U1: Arduino Pro Mini 5V [Switch-Science](https://www.switch-science.com/catalog/946/)
 * U2: MAX7219
 * IC1: 4051N
 * IC2 and IC4: LTC1485 x2
@@ -113,6 +113,77 @@
 * Con: JST PH 10p plug
 * Con: JST PH 16p plug
 * Flat cable
+
+
+# Note for NXP1768 edition
+
+| Panel/Port      | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Arduino Pin |
+| --------------- | -------- | ------ | ---------------------------- | ------------- | ------------ | ----------- |
+| **Panel**       | Max SW   |        | Max-set (DrivePort 3)        | CTRL 2        |              | p29         |
+|                 | Min SW   |        | Min-set (DrivePort 4)        | CTRL 3        |              | p30         |
+|                 | Clear SW |        | Clear-Min/Max (DrivePort 5)  | CTRL 4        |              | p11         |
+|                 | VR1      |        | Threshold (DrivePort 9)      | ANLG 0        |              | p19/AD      |
+|                 | Display  |        | Min/Max/Th/Level indicator   | LDIG, LSEG    |              |             |
+| **Power**       | P1       | Red    | Vcc (+5V)                    |               | B1           |             |
+|                 | P2       | Black  | GND [Black]                  |               | B[2,4,..,10] |             |
+| **XMIDI OUT**   | M1       |        | TX+ OR MIDI OUT SRC (DIN #4) | MIDI 5        | B22          |             |
+|                 | M2       |        | TX- OR MIDI OUT SNK (DIN #5) | MIDI 6        | B24          |             |
+|                 | M3       |        | MSW (GND OR NC)              | MIDI 7        | B26          |             |
+|                 | M4       |        | GND (DIN #2)                 |               |              |             |
+| **XMIDI IN**    | m1       |        | RX+ OR MIDI IN SRC (DIN #4)  | MIDI 2        | B16          |             |
+|                 | m2       |        | RX- OR MIDI IN SNK (DIN #5)  | MIDI 3        | B18          |             |
+|                 | m3       |        | mdetect (GND OR NC)          | MIDI 4        | B20          | p8          |
+|                 | m4       |        | GND                          |               |              |             |
+| **XUSB**        | U1       | Red    | Vcc                          |               |              |             |
+|                 | U2       | Black  | GND                          |               |              |             |
+|                 | U3       |        | _D+_                         |               |              |             |
+|                 | U4       |        | _D-_                         |               |              |             |
+|                 | U5       |        | _Reset_                      | CTRL 9        | B23          | _nR_        |
+|                 | U6       |        | _Reserved_                   | CTRL 1        | B25          |             |
+| **GeekPort II** | G1       | Red    | Vcc (+5V)                    |               |              |             |
+|                 | G2       | Black  | GND                          |               |              |             |
+|                 | G3       | Brown  | gdetect (connect to GND)     | GEEK 0        | B3           | p15/AD      |
+|                 | G4       | Orange | In 0                         | GEEK 1        | B5           | p16/AD      |
+|                 | G5       | Yellow | In 1                         | GEEK 2        | B7           | p17/AD      |
+|                 | G6       | Green  | In 2                         | GEEK 3        | B9           | p18/AD/DA   |
+|                 | G7       | Blue   | I2C SDA _(3.3V)_             | GEEK 4        | B11          | p28/SDA/TX  |
+|                 | G8       | Purple | I2C SCL _(3.3V)_             | GEEK 5        | B13          | p27/SCL/RX  |
+|                 | G9       | Gray   | gselect _(3.3V)_             | GEEK 6        | B15          | p21/PWM     |
+|                 | G10      |        | Out 0 _(3.3V)_               | GEEK 7        | B17          | p22/PWM     |
+|                 | G11      |        | Out 1 _(3.3V)_               | GEEK 8        | B19          | p23/PWM     |
+|                 | G12      |        | Out 2 _(3.3V)_               | GEEK 9        | B21          | p24/PWM     |
+| **DrivePort**   | D1       |        | Vcc                          |               |              |             |
+|                 | D2       |        | GND                          |               |              |             |
+|                 | D3       |        | Max-set                      | (CTRL 2)      |              | (p29)       |
+|                 | D4       |        | Min-set                      | (CTRL 3)      |              | (p30)       |
+|                 | D5       |        | Clear-Min/Max                | (CTRL 4)      |              | (p11)       |
+|                 | D6       |        | MOSI                         | CTRL 5        |              | p5/MOSI     |
+|                 | D7       |        | LOAD                         | CTRL 6        |              | p6/MISO     |
+|                 | D8       |        | SCLCK                        | CTRL 7        |              | p7/SCLCK    |
+|                 | D9       |        | VR1                          | (ANLG 0)      |              | (p19/AD)    |
+|                 | D10      |        | VR2                          | ANLG 1        |              | p20/AD      |
+| **LightPort**   | L1       |        |                              | LSEG 0        |              |             |
+|                 | L2       |        |                              | LSEG 1        |              |             |
+|                 | L3       |        |                              | LSEG 2        |              |             |
+|                 | L4       |        |                              | LSEG 3        |              |             |
+|                 | L5       |        |                              | LSEG 4        |              |             |
+|                 | L6       |        |                              | LSEG 5        |              |             |
+|                 | L7       |        |                              | LSEG 6        |              |             |
+|                 | L8       |        |                              | LSEG 7        |              |             |
+|                 | L9       |        |                              | LDIG 0        |              |             |
+|                 | L10      |        |                              | LDIG 1        |              |             |
+|                 | L11      |        |                              | LDIG 2        |              |             |
+|                 | L12      |        |                              | LDIG 3        |              |             |
+|                 | L13      |        |                              | LDIG 4        |              |             |
+|                 | L14      |        |                              | LDIG 5        |              |             |
+|                 | L15      |        |                              | LDIG 6        |              |             |
+|                 | L16      |        |                              | LDIG 7        |              |             |
+| **Internal**    | C1       |        | Vcc                          |               |              |             |
+|                 | C2       |        | GND                          |               |              |             |
+|                 | C3       |        | NC                           |               |              |             |
+|                 | C4       |        | SCL                          | (GEEK 5)      |              | (A5/SCL)    |
+|                 | C5       |        | SDA                          | (GEEK 4)      |              | (A4/SDA)    |
+| **Unconnected** |          |        | XBAR                         | CTRL 8        |              | p12         |
 
 
 
