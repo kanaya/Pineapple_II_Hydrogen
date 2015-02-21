@@ -46,7 +46,7 @@
 |                 | D7       |        | MISO/LOAD                    | CTRL 6        |              | D12/MISO     |
 |                 | D8       |        | SCLCK                        | CTRL 7        |              | D13/SCLCK    |
 |                 | D9       |        | VR/MODE                      | CTRL 8        |              | (A0)         |
-|                 | D10      |        | _RESERVED_                   |               |              |              |
+|                 | D10      |        | Reset                        | CTRL 10       |              |              |
 | **LightPort**   | L1       |        |                              | LSEG 0        |              |              |
 |                 | L2       |        |                              | LSEG 1        |              |              |
 |                 | L3       |        |                              | LSEG 2        |              |              |
@@ -69,7 +69,6 @@
 |                 | C4       |        | SCL                          | (GEEK 5)      |              | (A5/SCL)     |
 |                 | C5       |        | SDA                          | (GEEK 4)      |              | (A4/SDA)     |
 | **Unconnected** |          |        | XBAR                         | CTRL 9        |              | D8           |
-|                 |          |        | Reset                        | CTRL 10       |              | RST          |
 |                 |          |        | _RESERVED_                   |               |              | D2~INT*      |
 |                 |          |        | _RESERVED_                   |               |              | D7*          |
 

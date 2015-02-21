@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -11338,6 +11338,12 @@ Copyright 2015 by Pineapple.cc</text>
 <pinref part="U1" gate="G$1" pin="RST"/>
 <wire x1="116.84" y1="154.94" x2="124.46" y2="154.94" width="0.1524" layer="91"/>
 <label x="116.84" y="101.6" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="CN2" gate="G$1" pin="10"/>
+<wire x1="60.96" y1="99.06" x2="58.42" y2="96.52" width="0.1524" layer="91" curve="90"/>
+<wire x1="58.42" y1="96.52" x2="58.42" y2="73.66" width="0.1524" layer="91"/>
+<label x="58.42" y="78.74" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="CTRL8" class="0">
