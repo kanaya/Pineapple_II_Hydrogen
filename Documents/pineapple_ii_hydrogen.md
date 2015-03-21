@@ -1,78 +1,56 @@
-# Pineapple II Hydrogen/0.6.0 Tech Doc
+# Pineapple II Hydrogen/0.0.0 Tech Doc
 
 ## Interface
 
-| Panel/Port      | Pin      | Cable  | Signal                       | Internal Bus  | BackPort     | Pro Mini Pin |
+| Panel/Port      | Pin      | Cable  | Signal                       | Int. Bus      | Int. Port    | Micro Pin    |
 | --------------- | -------- | ------ | ---------------------------- | ------------- | ------------ | ------------ |
-| **Panel**       | Max SW   |        | Max-set (DrivePort 3)        | CTRL 2        |              | D3~INT       |
-|                 | Min SW   |        | Min-set (DrivePort 4)        | CTRL 3        |              | D5~          |
-|                 | Clear SW |        | Clear-Min-Max (DrivePort 5)  | CTRL 4        |              | A1           |
-|                 | VR       |        | Threshold (DrivePort 9)      | CTRL 8        |              | A0           |
-|                 | Display  |        | Min/Max/Th/Level indicator   | LDIG, LSEG    |              |              |
-| **Power**       | P1       | Red    | Vcc (+5V)                    |               | B1           |              |
-|                 | P2       | Black  | GND [Black]                  |               | B[2,4,..,10] |              |
-| **XMIDI OUT**   | M1       |        | TX+ OR MIDI OUT SRC (DIN #4) | MIDI 5        | B22          |              |
-|                 | M2       |        | TX- OR MIDI OUT SNK (DIN #5) | MIDI 6        | B24          |              |
-|                 | M3       |        | MSW (GND OR NC)              | MIDI 7        | B26          |              |
-|                 | M4       |        | GND (DIN #2)                 |               |              |              |
-| **XMIDI IN**    | m1       |        | RX+ OR MIDI IN SRC (DIN #4)  | MIDI 2        | B16          |              |
-|                 | m2       |        | RX- OR MIDI IN SNK (DIN #5)  | MIDI 3        | B18          |              |
-|                 | m3       |        | mdetect (GND OR NC)          | MIDI 4        | B20          | D4           |
-|                 | m4       |        | GND                          |               |              |              |
-| **EXT**         | X1       | Red    | Vcc (Red)                    |               |              |              |
-|                 | X2       | Black  | GND (Black, Brown)           |               |              |              |
-|                 | X3       | Orange | TX (Orange)                  | MIDI 1        | B14          | D1/TX        |
-|                 | X4       | Yellow | RX (Yellow)                  | MIDI 0        | B12          | D0/RX        |
-|                 | X5       | Green  | RTS (Green)                  | CTRL 0        | B23          | DTR          |
-|                 | X6       | Brown  | xdetect (connect to Vcc)     | CTRL 1        | B25          |              |
-| **GeekPort II** | G1       | Red    | Vcc (+5V)                    |               |              |              |
-|                 | G2       | Black  | GND                          |               |              |              |
-|                 | G3       | Brown  | gdetect (connect to GND)     | GEEK 0        | B3           | A6           |
-|                 | G4       | Orange | In 0                         | GEEK 1        | B5           | A7           |
-|                 | G5       | Yellow | In 1                         | GEEK 2        | B7           | A2           |
-|                 | G6       | Green  | In 2                         | GEEK 3        | B9           | A3           |
-|                 | G7       | Blue   | I2C SDA                      | GEEK 4        | B11          | A4/SDA       |
-|                 | G8       | Purple | I2C SCL                      | GEEK 5        | B13          | A5/SCL       |
-|                 | G9       |        | VREF                         |               | B15          |              |
-|                 | G10      |        | Out 0                        | GEEK 6        | B17          | D6~          |
-|                 | G11      |        | Out 1                        | GEEK 7        | B19          | D9~          |
-|                 | G12      |        | Out 2                        | GEEK 8        | B21          | D10~         |
-| **DrivePort**   | D1       |        | Vcc                          |               |              |              |
-|                 | D2       |        | GND                          |               |              |              |
-|                 | D3       |        | Max-set/BLANK                | (CTRL 2)      |              | (D3~INT)     |
-|                 | D4       |        | Min-set/GSCLCK               | (CTRL 3)      |              | (D5~)        |
-|                 | D5       |        | Clear-Min-Max/XLAT           | (CTRL 4)      |              | (A1)         |
-|                 | D6       |        | MOSI                         | CTRL 5        |              | D11~/MOSI    |
-|                 | D7       |        | MISO/LOAD                    | CTRL 6        |              | D12/MISO     |
-|                 | D8       |        | SCLCK                        | CTRL 7        |              | D13/SCLCK    |
-|                 | D9       |        | VR/MODE                      | CTRL 8        |              | (A0)         |
-|                 | D10      |        | Reset                        | CTRL 10       |              |              |
-| **LightPort**   | L1       |        |                              | LSEG 0        |              |              |
-|                 | L2       |        |                              | LSEG 1        |              |              |
-|                 | L3       |        |                              | LSEG 2        |              |              |
-|                 | L4       |        |                              | LSEG 3        |              |              |
-|                 | L5       |        |                              | LSEG 4        |              |              |
-|                 | L6       |        |                              | LSEG 5        |              |              |
-|                 | L7       |        |                              | LSEG 6        |              |              |
-|                 | L8       |        |                              | LSEG 7        |              |              |
-|                 | L9       |        |                              | LDIG 0        |              |              |
-|                 | L10      |        |                              | LDIG 1        |              |              |
-|                 | L11      |        |                              | LDIG 2        |              |              |
-|                 | L12      |        |                              | LDIG 3        |              |              |
-|                 | L13      |        |                              | LDIG 4        |              |              |
-|                 | L14      |        |                              | LDIG 5        |              |              |
-|                 | L15      |        |                              | LDIG 6        |              |              |
-|                 | L16      |        |                              | LDIG 7        |              |              |
-| **Internal**    | C1       |        | Vcc                          |               |              |              |
-|                 | C2       |        | GND                          |               |              |              |
-|                 | C3       |        | NC                           |               |              |              |
-|                 | C4       |        | SCL                          | (GEEK 5)      |              | (A5/SCL)     |
-|                 | C5       |        | SDA                          | (GEEK 4)      |              | (A4/SDA)     |
-| **Unconnected** |          |        | XBAR                         | CTRL 9        |              | D8           |
-|                 |          |        | _RESERVED_                   |               |              | D2~INT*      |
-|                 |          |        | _RESERVED_                   |               |              | D7*          |
-
-*Not available on Pro Trinket.
+| **Panel**       | Reset SW |        |                              |               | F3, F4       |              |
+|                 | LED      |        |                              |               | F5, F6       | D13          |
+| **Power**       | P1       | Red    | Power (+7V)                  |               | F1           |              |
+|                 | P2       | Black  | GND                          |               | F2           |              |
+| **MIDI OUT**    | M1       |        | NC                           |               |              |              |
+|                 | M2       |        | GND                          |               | B2           |              |
+|                 | M3       |        | NC                           |               |              |              |
+|                 | M4       |        | MIDI OUT SRC                 |               | B3           |              |
+|                 | M5       |        | MIDI OUT SNK                 |               | B4           | D1           |
+| **MIDI IN**     | m1       |        | NC                           |               |              |              |
+|                 | m2       |        | NC                           |               |              |              |
+|                 | m3       |        | NC                           |               |              |              |
+|                 | m4       |        | MIDI IN SRC                  |               | B5           |              |
+|                 | m5       |        | MIDI IN SNK                  |               | B6           | D0           |
+| **GeekPort D**  | G1       |        | USB Power                    |               |              |              |
+|                 | G2       |        | USB D+                       |               |              |              |
+|                 | G3       |        | USB D-                       |               |              |              |
+|                 | G4       |        | USB GND (?)                  |               |              |              |
+|                 | G5       |        | I2C SDA                      |               |              | D2INT        |
+|                 | G6       |        | I2C SCL                      |               |              | D3~INT       |
+|                 | G7       |        | Vcc                          |               |              |              |
+|                 | G8       |        | Sensor A                     |               |              | A0           |
+|                 | G9       |        | Sensor B                     |               |              | A1           |
+|                 | G10      |        | Sensor C                     |               |              | A2           |
+|                 | G11      |        | Sensor X                     |               |              | A7/D6~       |
+|                 | G12      |        | Sensor Y                     |               |              | A9/D9~       |
+|                 | G13      |        | Sensor Z                     |               |              | A10/D10~     |
+|                 | G14      |        | GND                          |               |              |              |
+| **GeekPort II** | G1       |        | Vcc                          |               | F7           |              |
+|                 | G2       |        | GND                          |               | F8           |              |
+|                 | G3       |        | USB D+                       |               |              |              |
+|                 | G4       |        | USB D-                       |               |              |              |
+|                 | G5       |        | USB Power                    |               |              |              |
+|                 | G6       |        | I2C SDA                      |               | F9, F10      | D2INT        |
+|                 | G7       |        | I2C SCL                      |               | F11, F12     | D3~INT       |
+|                 | G8       |        | Sensor A                     |               | F13, F14     | A0           |
+|                 | G9       |        | Sensor B                     |               | F15, F16     | A1           |
+|                 | G10      |        | Sensor C                     |               | F17, F18     | A2           |
+|                 | G11      |        | Sensor X                     |               | F19, F20     | A7/D6~       |
+|                 | G12      |        | Sensor Y                     |               | F21, F22     | A9/D9~       |
+|                 | G13      |        | Sensor Z                     |               | F23, F24     | A10/D10~     |
+|                 | G14      |        | GPIO                         |               | F25, F26     | D5~          |
+| **Unconnected** |          |        | _RESERVED_                   |               |              | D4           |
+|                 |          |        | _RESERVED_                   |               |              | D7           |
+|                 |          |        | _RESERVED_                   |               |              | D8           |
+|                 |          |        | _RESERVED_                   |               |              | D11~         |
+|                 |          |        | _RESERVED_                   |               |              | D12~         |
 
 
 ## Parts
