@@ -9215,6 +9215,18 @@ Source: www.kingbright.com</description>
 <plain>
 <text x="154.94" y="-17.78" size="1.778" layer="91">Pineapple II Hydrogen 0.0.0
 Copyright 2015 by Pineapple.cc</text>
+<text x="119.38" y="68.58" size="1.778" layer="91">1: TX+; 2: TX-
+3: NC; 4: NC</text>
+<text x="10.16" y="88.9" size="1.778" layer="91">1: Vcc; 2: GND; 3: Raw TX
+4: MIDI OUT Send; 5: MIDI OUT Return</text>
+<text x="149.86" y="22.86" size="1.778" layer="91">1,3: Power; 2, 4: GND
+5-6: Reset
+7-8: LED</text>
+<text x="149.86" y="12.7" size="1.778" layer="91">1: Vcc; 2: GND
+3: Sensor A; 4: Cable Detector</text>
+<text x="149.86" y="0" size="1.778" layer="91">1: Sensor X; 2: Sensor Y
+3: GPIO; 4: MISO
+5: MOSI; 6: SCLCK</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="27.94" y="45.72"/>
