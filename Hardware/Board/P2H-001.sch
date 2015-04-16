@@ -9157,9 +9157,9 @@ Copyright 2015 by Pineapple.cc</text>
 <instance part="CN1" gate="G$1" x="111.76" y="71.12"/>
 <instance part="SUPPLY10" gate="GND" x="223.52" y="-15.24"/>
 <instance part="U$1" gate="G$1" x="71.12" y="30.48"/>
-<instance part="R5" gate="G$1" x="40.64" y="27.94"/>
-<instance part="LED1" gate="G$1" x="33.02" y="22.86"/>
-<instance part="SUPPLY11" gate="GND" x="33.02" y="12.7"/>
+<instance part="R5" gate="G$1" x="43.18" y="20.32" rot="R90"/>
+<instance part="LED1" gate="G$1" x="50.8" y="27.94" rot="R270"/>
+<instance part="SUPPLY11" gate="GND" x="43.18" y="10.16"/>
 </instances>
 <busses>
 </busses>
@@ -9234,9 +9234,9 @@ Copyright 2015 by Pineapple.cc</text>
 <junction x="223.52" y="27.94"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
-<wire x1="33.02" y1="17.78" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="15.24" x2="43.18" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -9412,19 +9412,19 @@ Copyright 2015 by Pineapple.cc</text>
 <junction x="104.14" y="66.04"/>
 </segment>
 </net>
-<net name="N$20" class="0">
+<net name="N$12" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="*5"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="60.96" y1="27.94" x2="45.72" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="60.96" y1="27.94" x2="53.34" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$21" class="0">
+<net name="N$13" class="0">
 <segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="35.56" y1="27.94" x2="33.02" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="27.94" x2="33.02" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="27.94" x2="43.18" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="27.94" x2="43.18" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
