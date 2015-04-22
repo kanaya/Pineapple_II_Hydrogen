@@ -9335,13 +9335,13 @@ Copyright 2015 by Pineapple.cc</text>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="OK1" gate="A" pin="GND"/>
-<wire x1="81.28" y1="66.04" x2="83.82" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="66.04" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="68.58" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="50.8" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="50.8" x2="58.42" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="RXI"/>
 <wire x1="58.42" y1="43.18" x2="60.96" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="OK1" gate="A" pin="VO"/>
+<wire x1="81.28" y1="68.58" x2="83.82" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
