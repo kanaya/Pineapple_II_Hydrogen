@@ -9154,16 +9154,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
-<text x="12.7" y="-12.7" size="1.778" layer="91">Pineapple II Hydrogen 1 0.0.0
+<text x="12.7" y="-12.7" size="1.778" layer="91">Pineapple II Hydrogen 1.0.0
 Copyright 2015 by Pineapple.cc</text>
-<text x="106.68" y="53.34" size="1.778" layer="91">1: TX+; 2: TX-;
-3: RX+; 4: RX-</text>
-<text x="10.16" y="88.9" size="1.778" layer="91">1: Contact A; 2: GND; 3: Contact B;
+<text x="116.84" y="63.5" size="1.778" layer="91">MIDISTANCE (c)
+1: TX+; 2: TX-;
+3: NC; 4: NC</text>
+<text x="10.16" y="86.36" size="1.778" layer="91">MIDIOUT (m0)
+1: NC; 2: GND; 3: NC;
 4: MIDI OUT Send; 5: MIDI OUT Return</text>
-<text x="96.52" y="27.94" size="1.778" layer="91">1,3: Power; 2, 4: GND;
+<text x="127" y="40.64" size="1.778" layer="91">HYDROGEN CONNECTOR (h)
+1,3: Power; 2, 4: GND;
 5-6: Reset;
 7-8: LED</text>
-<text x="106.68" y="-5.08" size="1.778" layer="91">1: Vcc; 2: GND;
+<text x="106.68" y="-5.08" size="1.778" layer="91">GEEKPORT I (gamma)
+1: Vcc; 2: GND;
 3: Sensor; 4: Cable Detector;
 5: SDA; 6: SCL</text>
 </plain>
